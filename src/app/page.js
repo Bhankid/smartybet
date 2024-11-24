@@ -72,7 +72,7 @@ export default function Home() {
         </div> */}
 
         <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-          <h2 className="text-2xl font-extrabold">
+          <h2 className="text-lg font-bold">
             Pop<span className="text-blue-600">ular</span>
           </h2>
           <ul className="mt-4 space-y-2">
@@ -112,7 +112,7 @@ export default function Home() {
         </div> */}
 
         <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
-          <h1 className="text-2xl font-bold mb-4">
+          <h1 className="text-lg font-bold mb-4">
             <span className="text-gray-800">Qu</span>
             <span className="text-blue-600">iz</span>
           </h1>
