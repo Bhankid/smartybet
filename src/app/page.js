@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Betslip"); 
@@ -121,12 +123,15 @@ export default function Home() {
       {/* Main Content Area */}
       <div className="w-3/5 p-4">
         {/* Image Slider */}
-        <div className="bg-white p-4 rounded-lg shadow-md mb-4">
+        <div className="bg-white p-2 rounded-lg shadow-md mb-4">
           <div className="w-full h-60 overflow-hidden rounded-lg">
-            <img
+            <Image
               src={imageUrls[currentIndex]}
               alt={`Featured Image ${currentIndex + 1}`}
-              className="w-full h-auto"
+              layout="responsive" needs
+              width={500} 
+              height={250} 
+              crossOrigin="anonymous"
             />
           </div>
         </div>
@@ -153,20 +158,30 @@ export default function Home() {
                     </span>
                   </div>
                   <div className="flex justify-between items-center mb-2">
-                    <img
-                      src="https://placehold.co/50x50"
+                    {/* Use next/image for optimized image rendering */}
+                    <Image
+                      src="/p.jpeg"
                       alt="Presby Sch logo"
-                      className="w-10 h-10"
+                      width={20}
+                      height={20}
+                      className="rounded-full"
+                      crossOrigin="anonymous"
                     />
-                    <img
-                      src="https://placehold.co/50x50"
+                    <Image
+                      src="/m.jpeg"
                       alt="Mfantsipim Sch logo"
-                      className="w-10 h-10"
+                      width={20}
+                      height={20}
+                      className="rounded-full"
+                      crossOrigin="anonymous"
                     />
-                    <img
-                      src="https://placehold.co/50x50"
+                    <Image
+                      src="/s.jpeg"
                       alt="St. Augustine Sch logo"
-                      className="w-10 h-10"
+                      width={20}
+                      height={20}
+                      className="rounded-full"
+                      crossOrigin="anonymous"
                     />
                   </div>
                   <div className="flex justify-between items-center mb-2">
@@ -188,9 +203,11 @@ export default function Home() {
                     <span className="text-red-500 text-sm">
                       {card.category}
                     </span>
-                    <span className="text-blue-500 text-sm">
-                      More Events (3) <i className="fas fa-chevron-right"></i>
-                    </span>
+                    <Link href="/target-url">
+                      <span className="text-blue-500 text-sm">
+                        More Events (3) <i className="fas fa-chevron-right"></i>
+                      </span>
+                    </Link>
                   </div>
                 </div>
               ))}
