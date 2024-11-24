@@ -17,7 +17,7 @@ function Nav() {
   ];
 
   return (
-    <div className="bg-blue-600 text-white flex flex-col px-4 py-4">
+    <div className="bg-blue-600 text-white flex flex-col px-8 py-4">
       {/* Mobile Layout */}
       <div className="flex items-center justify-between mb-4 md:hidden">
         <div className="text-2xl font-bold">SmartyBet</div>
@@ -49,7 +49,7 @@ function Nav() {
           <div className="border-l-2 border-white h-5"></div>{" "}
           {/* Thicker vertical border */}
           <Link href="/my-account" className="flex items-center">
-            My Account <i className="fas fa-caret-down ml-1"></i>
+            My Account <i className="fa fa-angle-down ml-1"></i>
           </Link>
         </div>
       </div>
@@ -64,8 +64,8 @@ function Nav() {
             >
               <span
                 onClick={() => setActive(item)}
-                className={`relative ${
-                  active === item ? "border-b-2 border-white" : ""
+                className={`relative mb-2 ${
+                  active === item ? "border-b-4 border-white" : ""
                 }`}
               >
                 {item}
