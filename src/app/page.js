@@ -6,21 +6,47 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("betslip");
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Array of image URLs for the slider
   const imageUrls = [
-    "https://placehold.co/1200x300/FF5733/FFFFFF?text=Image+1",
-    "https://placehold.co/1200x300/33FF57/FFFFFF?text=Image+2",
-    "https://placehold.co/1200x300/3357FF/FFFFFF?text=Image+3",
-    "https://placehold.co/1200x300/FF33A1/FFFFFF?text=Image+4",
-    "https://placehold.co/1200x300/FFC300/FFFFFF?text=Image+5",
+    "https://i.postimg.cc/k42xgTxX/quiz.jpg",
+    "https://i.postimg.cc/FFqLDb00/24.jpg",
+    "https://i.postimg.cc/BZcv1xMq/OIP.jpg",
+    "https://i.postimg.cc/KvRdybKd/OIP-1.jpg",
+    "https://i.postimg.cc/25fJvBHD/OIP-2.jpg",
+  ];
+
+  const cardsData = [
+    {
+      title: "Best Odds",
+      event: ["1 W", "2 W", "3 W"],
+      odds: ["3.98", "3.67", "2.01"],
+      category: "NSMQ",
+    },
+    {
+      title: "Best Odds",
+      event: ["SCH W", "SCH W", "SCH W"],
+      odds: ["3.98", "3.67", "2.01"],
+      category: "Sharks",
+    },
+    {
+      title: "Best Odds",
+      event: ["1 W", "2 W", "3 W"],
+      odds: ["3.98", "3.67", "2.01"],
+      category: "NSMQ",
+    },
+    {
+      title: "Best Odds",
+      event: ["SCH W", "SCH W", "SCH W"],
+      odds: ["3.98", "3.67", "2.01"],
+      category: "Sharks",
+    },
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, [imageUrls.length]);
 
   return (
@@ -51,6 +77,45 @@ export default function Home() {
             <li className="mb-2 text-gray-800 font-semibold">NIOC 299</li>
           </ul>
         </div>
+
+        <div className="bg-white rounded-lg shadow-md p-4 mb-4">
+          <h2 className="text-lg font-bold text-gray-700">
+            Ran<span className="text-blue-500">king</span>
+          </h2>
+          <div className="mt-2">
+            <div className="flex justify-between text-gray-700">
+              <span>Presby Boys Sec</span>
+              <span>12</span>
+            </div>
+            <div className="flex justify-between text-gray-700 mt-2">
+              <span>Prempeh</span>
+              <span>12</span>
+            </div>
+            <div className="flex justify-between text-gray-700 mt-2">
+              <span>St. Peters</span>
+              <span>12</span>
+            </div>
+          </div>
+        </div>
+        <div className="bg-white rounded-lg shadow-md p-4 mb-4">
+          <h2 className="text-lg font-bold text-gray-700">
+            Co<span className="text-blue-500">un</span>tries
+          </h2>
+          <div className="mt-2">
+            <div className="flex justify-between text-gray-700">
+              <span>Ghana</span>
+              <span>12</span>
+            </div>
+            <div className="flex justify-between text-gray-700 mt-2">
+              <span>United States</span>
+              <span>12</span>
+            </div>
+            <div className="flex justify-between text-gray-700 mt-2">
+              <span>United Kingdom</span>
+              <span>12</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Main Content Area */}
@@ -71,105 +136,440 @@ export default function Home() {
           <h2 className="text-xl font-bold text-gray-900 mb-4">
             Featured Quizzes
           </h2>
-          <div className="grid grid-cols-4 gap-4">
-            {Array(4)
-              .fill()
-              .map((_, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-100 p-4 rounded-lg text-center shadow-sm hover:shadow-md"
-                >
-                  <img
-                    src="https://placehold.co/50x50"
-                    alt="Quiz logo"
-                    className="mx-auto mb-2 rounded-full"
-                  />
-                  <p className="text-gray-900 font-bold">Today</p>
-                  <p className="text-gray-800 font-semibold">13:30</p>
-                  <p className="text-gray-900 font-bold">NSMQ</p>
-                  <p className="text-gray-700">Accra High</p>
-                  <p className="text-gray-800">3.2</p>
-                  <p className="text-gray-800">3.7</p>
-                  <p className="text-gray-800">3.9</p>
+          <div className="auto-scroll">
+            <div className="scroll-container">
+              {cardsData.map((card, index) => (
+                <div key={index} className="bg-gray-50 rounded-lg shadow p-4">
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm font-semibold">
+                      Best Odds <i className="fas fa-fire text-red-500"></i>
+                    </span>
+                    <span className="text-sm">
+                      Today{" "}
+                      <span className="text-blue-500 font-bold">13:30</span>
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <img
+                      src="https://placehold.co/50x50"
+                      alt="Presby Sch logo"
+                      className="w-10 h-10"
+                    />
+                    <img
+                      src="https://placehold.co/50x50"
+                      alt="Mfantsipim Sch logo"
+                      className="w-10 h-10"
+                    />
+                    <img
+                      src="https://placehold.co/50x50"
+                      alt="St. Augustine Sch logo"
+                      className="w-10 h-10"
+                    />
+                  </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm">Presby Sch</span>
+                    <span className="text-sm">Mfantsipim Sch</span>
+                    <span className="text-sm">St. Augustine Sch</span>
+                  </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm">{card.event[0]}</span>
+                    <span className="text-sm">{card.event[1]}</span>
+                    <span className="text-sm">{card.event[2]}</span>
+                  </div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-sm">{card.odds[0]}</span>
+                    <span className="text-sm">{card.odds[1]}</span>
+                    <span className="text-sm">{card.odds[2]}</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-red-500 text-sm">
+                      {card.category}
+                    </span>
+                    <span className="text-blue-500 text-sm">
+                      More Events (3) <i className="fas fa-chevron-right"></i>
+                    </span>
+                  </div>
                 </div>
               ))}
+            </div>
           </div>
         </div>
 
         {/* Live Quizzes Section */}
-        <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Live</h2>
-          <div className="flex justify-between mb-2">
-            <div className="flex space-x-4">
-              <button className="px-4 py-2 bg-blue-500 text-white rounded-lg font-semibold">
-                All
-              </button>
-              <button className="px-4 py-2 bg-gray-200 rounded-lg font-semibold">
-                NSMQ
-              </button>
-              <button className="px-4 py-2 bg-gray-200 rounded-lg font-semibold">
-                JSMQ
-              </button>
-              <button className="px-4 py-2 bg-gray-200 rounded-lg font-semibold">
-                Sharks
-              </button>
-              <button className="px-4 py-2 bg-gray-200 rounded-lg font-semibold">
-                NIOC
+        <div className="bg-white rounded-lg shadow-md p-4 mb-4">
+          <div className="border-b pb-2 mb-4">
+            <h1 className="text-xl font-bold">Live</h1>
+            <div className="flex space-x-4 mt-2">
+              <button className="text-blue-500">All</button>
+              <button className="text-gray-500">NSMQ</button>
+              <button className="text-gray-500">JSMQ</button>
+              <button className="text-gray-500">Sharks</button>
+              <button className="text-gray-500">NIQC</button>
+              <button className="text-gray-500">
+                More <i className="fas fa-chevron-down"></i>
               </button>
             </div>
-            <button className="px-4 py-2 bg-gray-200 rounded-lg font-semibold">
-              More v
+          </div>
+          <div className="flex justify-between items-center mb-4">
+            <input
+              type="text"
+              className="border rounded p-2 w-1/3"
+              placeholder="1 2 3"
+            />
+            <select className="border rounded p-2 w-1/3">
+              <option>1st Correct School</option>
+            </select>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4 mb-4">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-gray-500">02/11 Saturday</span>
+              <span className="text-gray-500">
+                National Science and Maths Quiz
+              </span>
+              <span className="text-blue-500">+12 &gt;</span>
+            </div>
+            <div className="border-t pt-2">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-red-500">Round 1</span>
+                <span className="text-red-500">9' 43”</span>
+              </div>
+              <div className="text-red-500 font-bold mb-2">NSMQ</div>
+              <div className="mb-2">
+                <div className="flex justify-between items-center mb-1">
+                  <span>Accra High</span>
+                  <span className="text-blue-500">3</span>
+                </div>
+                <div className="flex justify-between items-center mb-1">
+                  <span>Accra Academy</span>
+                  <span className="text-blue-500">15</span>
+                </div>
+                <div className="flex justify-between items-center mb-1">
+                  <span>St. Thomas Aquinas</span>
+                  <span className="text-blue-500">0</span>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <div className="flex space-x-2">
+                  <button className="border rounded p-2 w-12">1</button>
+                  <button className="border rounded p-2 w-12">2</button>
+                  <button className="border rounded p-2 w-12">3</button>
+                  <button className="border rounded p-2 w-12">
+                    1st Correct School
+                  </button>
+                </div>
+                <div className="flex space-x-2">
+                  <button className="border rounded p-2 w-12">+1.10</button>
+                  <button className="border rounded p-2 w-12">+10.00</button>
+                  <button className="border rounded p-2 w-12">+50.00</button>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <div className="flex space-x-2">
+                  <button className="border rounded p-2 w-20">Points</button>
+                  <button className="border rounded p-2 w-20">Over</button>
+                  <button className="border rounded p-2 w-20">Under</button>
+                  <button className="border rounded p-2 w-20">
+                    Extra Market Available
+                  </button>
+                </div>
+                <div className="flex space-x-2">
+                  <button className="border rounded p-2 w-20">20.00</button>
+                  <button className="border rounded p-2 w-20">20.00</button>
+                  <button className="border rounded p-2 w-20">15.00</button>
+                  <button className="border rounded p-2 w-20">20.00</button>
+                  <button className="border rounded p-2 w-20">20.00</button>
+                  <button className="border rounded p-2 w-20">15.00</button>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <span>
+                  Round 1: <span className="text-blue-500">015</span>{" "}
+                  <span className="text-red-500">012</span>{" "}
+                  <span className="text-red-500">003</span>
+                </span>
+                <span>
+                  Round 2: <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>
+                </span>
+                <span>
+                  Round 3: <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>
+                </span>
+                <span className="text-red-500">
+                  <i className="fas fa-fire"></i>
+                </span>
+                <span className="text-red-500">
+                  <i className="fas fa-chart-line"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="bg-gray-50 rounded-lg p-4">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-gray-500">02/11 Saturday</span>
+              <span className="text-gray-500">
+                National Science and Maths Quiz
+              </span>
+              <span className="text-blue-500">+12 &gt;</span>
+            </div>
+            <div className="border-t pt-2">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-red-500">Round 1</span>
+                <span className="text-red-500">9' 43”</span>
+              </div>
+              <div className="text-red-500 font-bold mb-2">NSMQ</div>
+              <div className="mb-2">
+                <div className="flex justify-between items-center mb-1">
+                  <span>Accra High</span>
+                  <span className="text-blue-500">3</span>
+                </div>
+                <div className="flex justify-between items-center mb-1">
+                  <span>Accra Academy</span>
+                  <span className="text-blue-500">15</span>
+                </div>
+                <div className="flex justify-between items-center mb-1">
+                  <span>St. Thomas Aquinas</span>
+                  <span className="text-blue-500">0</span>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <div className="flex space-x-2">
+                  <button className="border rounded p-2 w-12">1</button>
+                  <button className="border rounded p-2 w-12">2</button>
+                  <button className="border rounded p-2 w-12">3</button>
+                  <button className="border rounded p-2 w-12">
+                    1st Correct School
+                  </button>
+                </div>
+                <div className="flex space-x-2">
+                  <button className="border rounded p-2 w-12">+1.10</button>
+                  <button className="border rounded p-2 w-12">+10.00</button>
+                  <button className="border rounded p-2 w-12">+50.00</button>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <div className="flex space-x-2">
+                  <button className="border rounded p-2 w-20">Points</button>
+                  <button className="border rounded p-2 w-20">Over</button>
+                  <button className="border rounded p-2 w-20">Under</button>
+                  <button className="border rounded p-2 w-20">
+                    Extra Market Available
+                  </button>
+                </div>
+                <div className="flex space-x-2">
+                  <button className="border rounded p-2 w-20">20.00</button>
+                  <button className="border rounded p-2 w-20">20.00</button>
+                  <button className="border rounded p-2 w-20">15.00</button>
+                  <button className="border rounded p-2 w-20">20.00</button>
+                  <button className="border rounded p-2 w-20">20.00</button>
+                  <button className="border rounded p-2 w-20">15.00</button>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <span>
+                  Round 1: <span className="text-blue-500">015</span>{" "}
+                  <span className="text-red-500">012</span>{" "}
+                  <span className="text-red-500">003</span>
+                </span>
+                <span>
+                  Round 2: <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>
+                </span>
+                <span>
+                  Round 3: <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>
+                </span>
+                <span className="text-red-500">
+                  <i className="fas fa-fire"></i>
+                </span>
+                <span className="text-red-500">
+                  <i className="fas fa-chart-line"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Quizzes Section */}
+        <div className="bg-white rounded-lg shadow p-4">
+          <h1 className="text-2xl font-bold mb-4">Quizzes</h1>
+          <div className="flex space-x-4 mb-4">
+            <button className="text-blue-500 border-b-2 border-blue-500 pb-1">
+              All
             </button>
+            <button className="text-gray-500">NSMQ</button>
+            <button className="text-gray-500">JSMQ</button>
+            <button className="text-gray-500">Sharks</button>
+            <button className="text-gray-500">NIQC</button>
+            <button className="text-gray-500">More</button>
+          </div>
+          <div className="flex justify-between items-center mb-4">
+            <div className="flex space-x-4">
+              <button className="text-blue-500">Highlights</button>
+              <button className="text-gray-500">Today</button>
+            </div>
+            <div className="flex space-x-4">
+              <input
+                type="text"
+                className="border rounded px-2 py-1"
+                placeholder="1 2 3"
+              />
+              <select className="border rounded px-2 py-1">
+                <option>1st Wrong School</option>
+              </select>
+            </div>
+          </div>
+          <div className="bg-gray-50 p-4 rounded-lg mb-4">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-gray-500">02/11 Saturday</span>
+              <span className="text-gray-500">
+                National Science and Maths Quiz
+              </span>
+            </div>
+            <div className="border-t border-gray-200 pt-2">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-red-500">Round 1</span>
+                <span className="text-red-500">9' 43"</span>
+              </div>
+              <div className="text-red-500 font-bold mb-2">NSMQ</div>
+              <div className="space-y-2 mb-4">
+                <div className="flex justify-between items-center">
+                  <span>Accra High</span>
+                  <span className="text-blue-500">3</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>Accra Academy</span>
+                  <span className="text-blue-500">15</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span>St. Thomas Aquinas</span>
+                  <span className="text-blue-500">0</span>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <div className="flex space-x-2">
+                  <button className="bg-gray-200 rounded px-2 py-1">1</button>
+                  <button className="bg-gray-200 rounded px-2 py-1">2</button>
+                  <button className="bg-gray-200 rounded px-2 py-1">3</button>
+                </div>
+                <div className="flex space-x-2">
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    Regular vHandicap
+                  </button>
+                  <button className="bg-gray-200 rounded px-2 py-1">+12</button>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <div className="flex space-x-2">
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    10.00
+                  </button>
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    100.00
+                  </button>
+                </div>
+                <div className="flex space-x-2">
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    +1.10
+                  </button>
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    +10.00
+                  </button>
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    +50.00
+                  </button>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mb-2">
+                <div className="flex space-x-2">
+                  <select className="bg-gray-200 rounded px-2 py-1">
+                    <option>20.00</option>
+                  </select>
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    20.00
+                  </button>
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    15.00
+                  </button>
+                </div>
+                <div className="flex space-x-2">
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    20.00
+                  </button>
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    20.00
+                  </button>
+                  <button className="bg-gray-200 rounded px-2 py-1">
+                    15.00
+                  </button>
+                </div>
+              </div>
+              <div className="flex justify-between items-center">
+                <div className="flex space-x-2">
+                  <span className="text-blue-500">Round 1: 015 012 003</span>
+                  <span className="text-gray-500">Round 2: 000 000 000</span>
+                  <span className="text-gray-500">Round 3: 000 000 000</span>
+                </div>
+                <div className="text-red-500">
+                  <i className="fas fa-fire"></i>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Right Sidebar */}
       <div className="w-1/5 p-4">
-        <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-          <div className="flex mb-4">
-            <button
-              className={`px-4 py-2 w-1/2 ${
-                activeTab === "betslip"
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200"
-              } rounded-l-lg font-semibold`}
-              onClick={() => setActiveTab("betslip")}
-            >
-              Betslip
-            </button>
-            <button
-              className={`px-4 py-2 w-1/2 ${
-                activeTab === "mybets"
-                  ? "bg-blue-500 text-white"
-                  : "bg-gray-200"
-              } rounded-r-lg font-semibold`}
-              onClick={() => setActiveTab("mybets")}
-            >
-              My Bets
-            </button>
+        <div className="bg-white rounded-2xl shadow-lg flex flex-col justify-between">
+          <div className="p-6">
+            <div className="flex justify-between border-b border-gray-200 pb-2 mb-4">
+              <div
+                className={`text-lg font-semibold relative cursor-pointer ${
+                  activeTab === "Betslip" ? "text-blue-600" : "text-gray-500"
+                }`}
+                onClick={() => setActiveTab("Betslip")}
+              >
+                Betslip
+                {activeTab === "Betslip" && (
+                  <div className="absolute bottom-0 left-0 w-full h-1.5 bg-blue-600 rounded-full"></div>
+                )}
+              </div>
+              <div
+                className={`text-lg font-semibold relative cursor-pointer ${
+                  activeTab === "My Bets" ? "text-blue-600" : "text-gray-500"
+                }`}
+                onClick={() => setActiveTab("My Bets")}
+              >
+                My Bets
+                {activeTab === "My Bets" && (
+                  <div className="absolute bottom-0 left-0 w-full h-1.5 bg-blue-600 rounded-full"></div>
+                )}
+              </div>
+            </div>
+            {activeTab === "Betslip" && (
+              <div>
+                <div className="text-gray-700 mb-4">
+                  Please insert booking code
+                </div>
+                <input
+                  type="text"
+                  placeholder="Booking code"
+                  className="w-full border border-blue-400 rounded px-3 py-2 text-gray-500"
+                />
+              </div>
+            )}
+            {activeTab === "My Bets" && (
+              <div className="text-gray-700 mb-4">No bets available</div>
+            )}
           </div>
-          {activeTab === "betslip" ? (
-            <div>
-              <label className="block mb-2 text-gray-900 font-semibold">
-                Please insert booking code
-              </label>
-              <input
-                type="text"
-                placeholder="Booking code"
-                className="w-full p-2 mb-2 border rounded-lg"
-              />
-              <button className="w-full p-2 bg-blue-500 text-white rounded-lg font-semibold">
-                Load
-              </button>
-            </div>
-          ) : (
-            <div>
-              <p className="text-center text-gray-800 font-semibold">
-                No bets available
-              </p>
-            </div>
-          )}
+          <button className="w-full bg-gray-300 text-gray-500 py-2 rounded-bl-2xl rounded-br-2xl">
+            Load
+          </button>
         </div>
       </div>
     </div>
