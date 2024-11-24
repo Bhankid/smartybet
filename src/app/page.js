@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Matches } from "./components/Matches";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Betslip");
@@ -183,7 +184,6 @@ export default function Home() {
               src={imageUrls[currentIndex]}
               alt={`Featured Image ${currentIndex + 1}`}
               layout="fill"
-             
               crossOrigin="anonymous"
               style={{
                 objectFit: "cover",
@@ -621,6 +621,9 @@ export default function Home() {
             Load
           </button>
         </div>
+
+        {/* Matches Component */}
+        <Matches />
 
         {/* Button */}
         <div className="flex items-center bg-blue-600 rounded-full p-2 w-30 relative">

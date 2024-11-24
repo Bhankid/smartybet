@@ -17,7 +17,7 @@ function Nav() {
   ];
 
   return (
-    <div className="bg-blue-600 text-white flex flex-col px-8 py-4">
+    <div className="bg-blue-600 text-white flex flex-col px-16 py-4">
       {/* Mobile Layout */}
       <div className="flex items-center justify-between mb-4 md:hidden">
         <div className="text-2xl font-bold">SmartyBet</div>
@@ -64,11 +64,11 @@ function Nav() {
             >
               <span
                 onClick={() => setActive(item)}
-                className={`relative mb-2 ${
+                className={`relative mb-1 ${
                   active === item ? "border-b-4 border-white" : ""
                 }`}
               >
-                {item}
+                <em>{item}</em>
                 {item === "App" && (
                   <span className="absolute top-0 right-0 bg-red-500 text-xs text-white px-1 rounded-full">
                     Hot
