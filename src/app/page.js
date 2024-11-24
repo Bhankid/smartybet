@@ -3,15 +3,15 @@
 import React, { useState, useEffect } from "react";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("betslip");
+  const [activeTab, setActiveTab] = useState("Betslip"); 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const imageUrls = [
-    "https://i.postimg.cc/k42xgTxX/quiz.jpg",
-    "https://i.postimg.cc/FFqLDb00/24.jpg",
-    "https://i.postimg.cc/BZcv1xMq/OIP.jpg",
-    "https://i.postimg.cc/KvRdybKd/OIP-1.jpg",
-    "https://i.postimg.cc/25fJvBHD/OIP-2.jpg",
+    "https://i.postimg.cc/cHz908yn/quiz.jpg",
+    "https://i.postimg.cc/gJjSCH5p/24.jpg",
+    "https://i.postimg.cc/FzJPRsNn/OIP.jpg",
+    "https://i.postimg.cc/G3WRj48t/OIP-1.jpg",
+    "https://i.postimg.cc/XYKzdJFR/OIP-2.jpg",
   ];
 
   const cardsData = [
@@ -122,7 +122,7 @@ export default function Home() {
       <div className="w-3/5 p-4">
         {/* Image Slider */}
         <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-          <div className="w-full overflow-hidden rounded-lg">
+          <div className="w-full h-60 overflow-hidden rounded-lg">
             <img
               src={imageUrls[currentIndex]}
               alt={`Featured Image ${currentIndex + 1}`}
@@ -143,7 +143,6 @@ export default function Home() {
                   key={index}
                   className="bg-gray-50 rounded-lg shadow p-4 flex-shrink-0"
                 >
-                 
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm font-semibold">
                       Best Odds <i className="fas fa-fire text-red-500"></i>
@@ -199,8 +198,6 @@ export default function Home() {
           </div>
         </div>
 
-
-
         {/* Live Quizzes Section */}
         <div className="bg-white rounded-lg shadow-md p-4 mb-4">
           <div className="border-b pb-2 mb-4">
@@ -255,33 +252,20 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex justify-between items-center mb-2">
-                <div className="flex space-x-2">
-                  <button className="border rounded p-2 w-12">1</button>
-                  <button className="border rounded p-2 w-12">2</button>
-                  <button className="border rounded p-2 w-12">3</button>
-                  <button className="border rounded p-2 w-12">
-                    1st Correct School
-                  </button>
-                </div>
-                <div className="flex space-x-2">
-                  <button className="border rounded p-2 w-12">+1.10</button>
-                  <button className="border rounded p-2 w-12">+10.00</button>
-                  <button className="border rounded p-2 w-12">+50.00</button>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <div className="flex space-x-2">
-                  <button className="border rounded p-2 w-20">Points</button>
-                  <button className="border rounded p-2 w-20">Over</button>
-                  <button className="border rounded p-2 w-20">Under</button>
-                  <button className="border rounded p-2 w-20">
-                    Extra Market Available
-                  </button>
-                </div>
-                <div className="flex space-x-2">
+                <div className="flex flex-col items-center space-y-1">
+                  <span>Points</span>
                   <button className="border rounded p-2 w-20">20.00</button>
+                </div>
+                <div className="flex flex-col items-center space-y-1">
+                  <span>Over</span>
                   <button className="border rounded p-2 w-20">20.00</button>
+                </div>
+                <div className="flex flex-col items-center space-y-1">
+                  <span>Under</span>
                   <button className="border rounded p-2 w-20">15.00</button>
+                </div>
+                <div className="flex flex-col items-center space-y-1">
+                  <span>Extra Market Available</span>
                   <button className="border rounded p-2 w-20">20.00</button>
                   <button className="border rounded p-2 w-20">20.00</button>
                   <button className="border rounded p-2 w-20">15.00</button>
@@ -289,18 +273,18 @@ export default function Home() {
               </div>
               <div className="flex justify-between items-center mb-2">
                 <span>
-                  Round 1: <span className="text-blue-500">015</span>{" "}
-                  <span className="text-red-500">012</span>{" "}
+                  Round 1: <span className="text-blue-500">015</span>
+                  <span className="text-red-500">012</span>
                   <span className="text-red-500">003</span>
                 </span>
                 <span>
-                  Round 2: <span className="text-gray-500">000</span>{" "}
-                  <span className="text-gray-500">000</span>{" "}
+                  Round 2: <span className="text-gray-500">000</span>
+                  <span className="text-gray-500">000</span>
                   <span className="text-gray-500">000</span>
                 </span>
                 <span>
-                  Round 3: <span className="text-gray-500">000</span>{" "}
-                  <span className="text-gray-500">000</span>{" "}
+                  Round 3: <span className="text-gray-500">000</span>
+                  <span className="text-gray-500">000</span>
                   <span className="text-gray-500">000</span>
                 </span>
                 <span className="text-red-500">
@@ -341,33 +325,20 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex justify-between items-center mb-2">
-                <div className="flex space-x-2">
-                  <button className="border rounded p-2 w-12">1</button>
-                  <button className="border rounded p-2 w-12">2</button>
-                  <button className="border rounded p-2 w-12">3</button>
-                  <button className="border rounded p-2 w-12">
-                    1st Correct School
-                  </button>
-                </div>
-                <div className="flex space-x-2">
-                  <button className="border rounded p-2 w-12">+1.10</button>
-                  <button className="border rounded p-2 w-12">+10.00</button>
-                  <button className="border rounded p-2 w-12">+50.00</button>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <div className="flex space-x-2">
-                  <button className="border rounded p-2 w-20">Points</button>
-                  <button className="border rounded p-2 w-20">Over</button>
-                  <button className="border rounded p-2 w-20">Under</button>
-                  <button className="border rounded p-2 w-20">
-                    Extra Market Available
-                  </button>
-                </div>
-                <div className="flex space-x-2">
+                <div className="flex flex-col items-center space-y-1">
+                  <span>Points</span>
                   <button className="border rounded p-2 w-20">20.00</button>
+                </div>
+                <div className="flex flex-col items-center space-y-1">
+                  <span>Over</span>
                   <button className="border rounded p-2 w-20">20.00</button>
+                </div>
+                <div className="flex flex-col items-center space-y-1">
+                  <span>Under</span>
                   <button className="border rounded p-2 w-20">15.00</button>
+                </div>
+                <div className="flex flex-col items-center space-y-1">
+                  <span>Extra Market Available</span>
                   <button className="border rounded p-2 w-20">20.00</button>
                   <button className="border rounded p-2 w-20">20.00</button>
                   <button className="border rounded p-2 w-20">15.00</button>
@@ -375,18 +346,18 @@ export default function Home() {
               </div>
               <div className="flex justify-between items-center mb-2">
                 <span>
-                  Round 1: <span className="text-blue-500">015</span>{" "}
-                  <span className="text-red-500">012</span>{" "}
+                  Round 1: <span className="text-blue-500">015</span>
+                  <span className="text-red-500">012</span>
                   <span className="text-red-500">003</span>
                 </span>
                 <span>
-                  Round 2: <span className="text-gray-500">000</span>{" "}
-                  <span className="text-gray-500">000</span>{" "}
+                  Round 2: <span className="text-gray-500">000</span>
+                  <span className="text-gray-500">000</span>
                   <span className="text-gray-500">000</span>
                 </span>
                 <span>
-                  Round 3: <span className="text-gray-500">000</span>{" "}
-                  <span className="text-gray-500">000</span>{" "}
+                  Round 3: <span className="text-gray-500">000</span>
+                  <span className="text-gray-500">000</span>
                   <span className="text-gray-500">000</span>
                 </span>
                 <span className="text-red-500">
@@ -531,7 +502,7 @@ export default function Home() {
 
       {/* Right Sidebar */}
       <div className="w-1/5 p-4">
-        <div className="bg-white rounded-2xl shadow-lg flex flex-col justify-between">
+        <div className="bg-white rounded-2xl shadow-lg flex flex-col justify-between mb-4">
           <div className="p-6">
             <div className="flex justify-between border-b border-gray-200 pb-2 mb-4">
               <div
@@ -577,7 +548,16 @@ export default function Home() {
             Load
           </button>
         </div>
-        
+
+        {/* Button */}
+        <div className="flex items-center bg-blue-600 rounded-full p-2 w-30 relative">
+          <div className="bg-blue-600 rounded-full p-2">
+            <i className="fa-solid fa-headset text-white text-xl"></i>
+          </div>
+          <div className="absolute right-0 bg-blue-600 rounded-full p-4 border-2 border-white">
+            <i className="fas fa-arrow-left text-white text-xl"></i>
+          </div>
+        </div>
       </div>
     </div>
   );
