@@ -17,7 +17,7 @@ function Nav() {
   ];
 
   return (
-    <div className="bg-blue-600 text-white flex flex-col px-16 py-4">
+    <div className="bg-blue-600 text-white flex flex-col md:px-16 py-4">
       {/* Mobile Layout */}
       <div className="flex items-center justify-between mb-4 md:hidden">
         <div className="text-2xl font-bold">SmartyBet</div>
