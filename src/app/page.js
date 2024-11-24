@@ -137,9 +137,13 @@ export default function Home() {
             Featured Quizzes
           </h2>
           <div className="auto-scroll">
-            <div className="scroll-container">
+            <div className="scroll-container flex space-x-4">
               {cardsData.map((card, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg shadow p-4">
+                <div
+                  key={index}
+                  className="bg-gray-50 rounded-lg shadow p-4 flex-shrink-0"
+                >
+                 
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm font-semibold">
                       Best Odds <i className="fas fa-fire text-red-500"></i>
@@ -195,6 +199,8 @@ export default function Home() {
           </div>
         </div>
 
+
+
         {/* Live Quizzes Section */}
         <div className="bg-white rounded-lg shadow-md p-4 mb-4">
           <div className="border-b pb-2 mb-4">
@@ -231,7 +237,7 @@ export default function Home() {
             <div className="border-t pt-2">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-red-500">Round 1</span>
-                <span className="text-red-500">9' 43”</span>
+                <span className="text-red-500">9&apos; 43&quot;</span>
               </div>
               <div className="text-red-500 font-bold mb-2">NSMQ</div>
               <div className="mb-2">
@@ -317,7 +323,7 @@ export default function Home() {
             <div className="border-t pt-2">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-red-500">Round 1</span>
-                <span className="text-red-500">9' 43”</span>
+                <span className="text-red-500">9&apos; 43&quot;</span>
               </div>
               <div className="text-red-500 font-bold mb-2">NSMQ</div>
               <div className="mb-2">
@@ -433,7 +439,7 @@ export default function Home() {
             <div className="border-t border-gray-200 pt-2">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-red-500">Round 1</span>
-                <span className="text-red-500">9' 43"</span>
+                <span className="text-red-500">9&apos; 43&quot;</span>
               </div>
               <div className="text-red-500 font-bold mb-2">NSMQ</div>
               <div className="space-y-2 mb-4">
@@ -571,6 +577,7 @@ export default function Home() {
             Load
           </button>
         </div>
+        
       </div>
     </div>
   );
