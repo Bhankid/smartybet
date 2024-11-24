@@ -40,8 +40,14 @@ function Nav() {
             <i className="fas fa-eye"></i>
             <i className="fas fa-sync-alt"></i>
           </div>
+          <div className="border-l-2 border-white h-5"></div>{" "}
+          {/* Thicker vertical border */}
           <Link href="/deposit">Deposit</Link>
+          <div className="border-l-2 border-white h-5"></div>{" "}
+          {/* Thicker vertical border */}
           <Link href="/my-bets">My Bets</Link>
+          <div className="border-l-2 border-white h-5"></div>{" "}
+          {/* Thicker vertical border */}
           <Link href="/my-account" className="flex items-center">
             My Account <i className="fas fa-caret-down ml-1"></i>
           </Link>

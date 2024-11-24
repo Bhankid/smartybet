@@ -5,15 +5,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState("Betslip"); 
+  const [activeTab, setActiveTab] = useState("Betslip");
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const imageUrls = [
-    "https://i.postimg.cc/cHz908yn/quiz.jpg",
-    "https://i.postimg.cc/gJjSCH5p/24.jpg",
-    "https://i.postimg.cc/FzJPRsNn/OIP.jpg",
-    "https://i.postimg.cc/G3WRj48t/OIP-1.jpg",
-    "https://i.postimg.cc/XYKzdJFR/OIP-2.jpg",
+    "https://i.postimg.cc/bJ24mP2j/qz.png",
+    "https://i.postimg.cc/DwrkTnCf/Frame-94.png",
+    "https://i.postimg.cc/C169N1K7/Amanfuor.png",
+    "https://i.postimg.cc/Hk6GxBCF/id.png",
+    "https://i.postimg.cc/5Ndjq5RX/bg0.jpg",
   ];
 
   const cardsData = [
@@ -52,10 +52,10 @@ export default function Home() {
   }, [imageUrls.length]);
 
   return (
-    <div className="min-h-screen flex bg-gray-50">
+    <div className="min-h-screen flex bg-[#E7EDF6]">
       {/* Left Sidebar */}
       <div className="w-1/5 p-4">
-        <div className="bg-white p-4 rounded-lg shadow-md mb-4">
+        {/* <div className="bg-white p-4 rounded-lg shadow-md mb-4">
           <h2 className="text-xl font-bold text-gray-900 mb-2">Popular</h2>
           <ul>
             <li className="mb-2 text-gray-800 font-semibold">
@@ -69,8 +69,39 @@ export default function Home() {
             </li>
             <li className="mb-2 text-gray-800 font-semibold">Booking Codes</li>
           </ul>
-        </div>
+        </div> */}
+
         <div className="bg-white p-4 rounded-lg shadow-md mb-4">
+          <h2 className="text-2xl font-extrabold">
+            Pop<span className="text-blue-600">ular</span>
+          </h2>
+          <ul className="mt-4 space-y-2">
+            <li className="flex items-center">
+              <i className="fas fa-headphones-alt text-xl"></i>
+              <span className="ml-2 text-gray-700 text-md">
+                Quizzes Today (9148)
+              </span>
+            </li>
+            <li className="flex items-center">
+              <i className="fas fa-headphones-alt text-xl"></i>
+              <span className="ml-2 text-gray-700 text-md">
+                Best Odds (241)
+              </span>
+            </li>
+            <li className="flex items-center">
+              <i className="fas fa-headphones-alt text-xl"></i>
+              <span className="ml-2 text-gray-700 text-md">
+                Odds &lt; 2.0 (1048)
+              </span>
+            </li>
+            <li className="flex items-center">
+              <i className="fas fa-headphones-alt text-xl"></i>
+              <span className="ml-2 text-gray-700 text-md">Booking Codes</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* <div className="bg-white p-4 rounded-lg shadow-md mb-4">
           <h2 className="text-xl font-bold text-gray-900 mb-2">Quiz</h2>
           <ul>
             <li className="mb-2 text-gray-800 font-semibold">NSMQ 299</li>
@@ -78,6 +109,29 @@ export default function Home() {
             <li className="mb-2 text-gray-800 font-semibold">Sharks 299</li>
             <li className="mb-2 text-gray-800 font-semibold">NIOC 299</li>
           </ul>
+        </div> */}
+
+        <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
+          <h1 className="text-2xl font-bold mb-4">
+            <span className="text-gray-800">Qu</span>
+            <span className="text-blue-600">iz</span>
+          </h1>
+          <div className="flex justify-between text-gray-700 mb-2">
+            <span>NSMQ</span>
+            <span>299</span>
+          </div>
+          <div className="flex justify-between text-gray-700 mb-2">
+            <span>JSMQ</span>
+            <span>299</span>
+          </div>
+          <div className="flex justify-between text-gray-700 mb-2">
+            <span>Sharks</span>
+            <span>299</span>
+          </div>
+          <div className="flex justify-between text-gray-700">
+            <span>NIQC</span>
+            <span>299</span>
+          </div>
         </div>
 
         <div className="bg-white rounded-lg shadow-md p-4 mb-4">
@@ -101,7 +155,7 @@ export default function Home() {
         </div>
         <div className="bg-white rounded-lg shadow-md p-4 mb-4">
           <h2 className="text-lg font-bold text-gray-700">
-            Co<span className="text-blue-500">un</span>tries
+            Coun<span className="text-blue-500">tries</span>
           </h2>
           <div className="mt-2">
             <div className="flex justify-between text-gray-700">
@@ -124,14 +178,17 @@ export default function Home() {
       <div className="w-3/5 p-4">
         {/* Image Slider */}
         <div className="bg-white p-2 rounded-lg shadow-md mb-4">
-          <div className="w-full h-60 overflow-hidden rounded-lg">
+          <div className="relative w-full h-60 overflow-hidden rounded-lg">
             <Image
               src={imageUrls[currentIndex]}
               alt={`Featured Image ${currentIndex + 1}`}
-              layout="responsive" needs
-              width={500} 
-              height={250} 
+              layout="fill"
+             
               crossOrigin="anonymous"
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+              }}
             />
           </div>
         </div>
@@ -146,7 +203,7 @@ export default function Home() {
               {cardsData.map((card, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 rounded-lg shadow p-4 flex-shrink-0"
+                  className="bg-[#E7EDF6] rounded-lg shadow p-4 flex-shrink-0"
                 >
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-sm font-semibold">
@@ -158,7 +215,6 @@ export default function Home() {
                     </span>
                   </div>
                   <div className="flex justify-between items-center mb-2">
-                    {/* Use next/image for optimized image rendering */}
                     <Image
                       src="/p.jpeg"
                       alt="Presby Sch logo"
