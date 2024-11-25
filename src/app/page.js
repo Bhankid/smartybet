@@ -520,7 +520,7 @@ export default function Home() {
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="flex-1">Accra Academy</div>
-                    <div className="text-blue-500 w-12 pl-1 text-center">
+                    <div className="text-blue-500 w-8 pl-1 text-center">
                       15
                     </div>
                     <div className="flex space-x-2">
@@ -736,7 +736,7 @@ export default function Home() {
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex-1">Accra Academy</div>
-                  <div className="text-blue-500 w-12 pl-1 text-center">15</div>
+                  <div className="text-blue-500 w-8 pl-1 text-center">15</div>
                   <div className="flex space-x-2">
                     <div className="w-12 text-center">Points</div>
                     <div className="w-12 text-center">Over</div>
