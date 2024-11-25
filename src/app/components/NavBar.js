@@ -56,7 +56,7 @@ function Nav() {
 
       {/* Navigation Links and Search Icon (Only visible on Desktop) */}
       <div className="hidden md:flex justify-between items-center">
-        <div className="flex space-x-6 overflow-x-auto">
+        <div className="flex space-x-6 overflow-x-auto overflow-hidden">
           {navItems.map((item) => (
             <Link
               key={item}
@@ -70,7 +70,10 @@ function Nav() {
               >
                 <em>{item}</em>
                 {item === "App" && (
-                  <span className="absolute top-0 right-0 bg-red-500 text-xs text-white px-1 rounded-full">
+                  <span
+                    className="absolute top-0 right-0 bg-red-500 text-white rounded-full"
+                    style={{ fontSize: "0.48rem", padding: "0.1rem 0.2rem" }}
+                  >
                     Hot
                   </span>
                 )}
