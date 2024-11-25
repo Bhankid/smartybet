@@ -8,6 +8,7 @@ import { Matches } from "./components/Matches";
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Betslip");
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const imageUrls = [
     "https://i.postimg.cc/bJ24mP2j/qz.png",
@@ -44,18 +45,23 @@ export default function Home() {
     },
   ];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-    }, 3000);
+ useEffect(() => {
+   const interval = setInterval(() => {
+     setIsTransitioning(true);
+     setTimeout(() => {
+       setCurrentIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
+       setIsTransitioning(false); // Reset transitioning state
+     }, 500); // Duration of the transition
+   }, 3000); // Change image every 3 seconds
 
-    return () => clearInterval(interval);
-  }, [imageUrls.length]);
+   return () => clearInterval(interval);
+ }, [imageUrls.length]);
+
 
   return (
     <div className="min-h-screen flex bg-[#E7EDF6]">
       {/* Left Sidebar */}
-      <div className="w-1/5 p-4">
+      <div className="w-1/5 p-2">
         {/* <div className="bg-white p-4 rounded-lg shadow-md mb-4">
           <h2 className="text-xl font-bold text-gray-900 mb-2">Popular</h2>
           <ul>
@@ -176,20 +182,26 @@ export default function Home() {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-3/5 p-3">
+      <div className="w-3/5 p-2">
         {/* Image Slider */}
         <div className="bg-white rounded-lg shadow-md mb-4">
           <div className="relative w-full h-60 overflow-hidden rounded-lg">
-            <Image
-              src={imageUrls[currentIndex]}
-              alt={`Featured Image ${currentIndex + 1}`}
-              layout="fill"
-              crossOrigin="anonymous"
-              style={{
-                objectFit: "cover",
-                objectPosition: "center",
-              }}
-            />
+            <div
+              className={`absolute inset-0 transition-opacity duration-500 ${
+                isTransitioning ? "opacity-0" : "opacity-100"
+              }`}
+            >
+              <Image
+                src={imageUrls[currentIndex]}
+                alt={`Featured Image ${currentIndex + 1}`}
+                layout="fill"
+                crossOrigin="anonymous"
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
           </div>
         </div>
 
@@ -291,11 +303,10 @@ export default function Home() {
             <div className="flex justify-end items-center space-x-4">
               <input
                 type="text"
-                className="border rounded px-2 py-1"
-                value="1 2 3"
-                readOnly
+                className="border rounded px-2 py-1 w-40"
+                placeholder="1 2 3"
               />
-              <select className="border rounded px-2 py-1">
+              <select className="border rounded px-1 py-1">
                 <option>1st Correct School</option>
               </select>
             </div>
@@ -457,9 +468,11 @@ export default function Home() {
             </div>
           </div> */}
 
-          <div className="text-gray-500 text-sm mb-2">02/11 Saturday</div>
-          <div className="text-right text-gray-500 text-sm mb-2">
-            National Science and Maths Quiz
+          <div className="flex justify-between items-center mb-2">
+            <div className="text-gray-500 text-sm">02/11 Saturday</div>
+            <div className="text-gray-500 text-sm text-right">
+              National Science and Maths Quiz
+            </div>
           </div>
           <div className="space-y-4">
             {[1, 2].map((_, index) => (
@@ -485,39 +498,24 @@ export default function Home() {
                     <div className="flex-1">Accra High</div>
                     <div className="text-blue-500 w-8 text-center">3</div>
                     <div className="flex space-x-2">
-                      <button className="w-12 h-8 flex items-center justify-center border rounded">
+                      <button className="w-12  flex items-center justify-center border rounded">
                         <i className="fas fa-lock text-gray-500"></i>
                       </button>
-                      <input
-                        type="text"
-                        value="10.00"
-                        className="w-16 text-center border rounded p-1"
-                        readOnly
-                      />
-                      <input
-                        type="text"
-                        value="100.00"
-                        className="w-16 text-center border rounded p-1"
-                        readOnly
-                      />
-                      <input
-                        type="text"
-                        value="+1.10"
-                        className="w-16 text-center border rounded p-1"
-                        readOnly
-                      />
-                      <input
-                        type="text"
-                        value="+10.00"
-                        className="w-16 text-center border rounded p-1"
-                        readOnly
-                      />
-                      <input
-                        type="text"
-                        value="+50.00"
-                        className="w-16 text-center border rounded p-1 bg-blue-500 text-white"
-                        readOnly
-                      />
+                      <button className="w-12 text-center border rounded p-1 text-sm">
+                        10.00
+                      </button>
+                      <button className="w-12 text-center border rounded p-1 text-sm">
+                        100.00
+                      </button>
+                      <button className="w-12 text-center border rounded p-1 text-sm">
+                        +1.10
+                      </button>
+                      <button className="w-12 text-center border rounded p-1 text-sm">
+                        +10.00
+                      </button>
+                      <button className="w-12 text-center border rounded p-1 bg-blue-500 text-white text-sm">
+                        +50.00
+                      </button>
                     </div>
                   </div>
                   <div className="flex justify-between items-center">
@@ -526,9 +524,9 @@ export default function Home() {
                       15
                     </div>
                     <div className="flex space-x-2">
-                      <div className="w-16 text-center">Points</div>
-                      <div className="w-16 text-center">Over</div>
-                      <div className="w-16 text-center">Under</div>
+                      <div className="w-12 text-center">Points</div>
+                      <div className="w-12 text-center">Over</div>
+                      <div className="w-12 text-center">Under</div>
                       <div className="w-34 text-center">
                         Extra Markets Available
                       </div>
@@ -538,39 +536,26 @@ export default function Home() {
                     <div className="flex-1">St. Thomas Aquinas</div>
                     <div className="text-blue-500 w-8 text-center">0</div>
                     <div className="flex space-x-2">
-                      <select className="w-16 text-center border rounded p-1">
+                      <select className="w-12 text-sm text-center border rounded p-1">
                         <option value="20.00">20.00</option>
                       </select>
-                      <input
-                        type="text"
-                        value="20.00"
-                        className="w-16 text-center border rounded p-1"
-                        readOnly
-                      />
-                      <input
-                        type="text"
-                        value="15.00"
-                        className="w-16 text-center border rounded p-1"
-                        readOnly
-                      />
-                      <input
-                        type="text"
-                        value="20.00"
-                        className="w-16 text-center border rounded p-1"
-                        readOnly
-                      />
-                      <input
-                        type="text"
-                        value="20.00"
-                        className="w-16 text-center border rounded p-1"
-                        readOnly
-                      />
-                      <input
-                        type="text"
-                        value="15.00"
-                        className="w-16 text-center border rounded p-1"
-                        readOnly
-                      />
+                      <div className="flex space-x-2">
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          20.00
+                        </button>
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          15.00
+                        </button>
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          20.00
+                        </button>
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          20.00
+                        </button>
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          15.00
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -618,19 +603,20 @@ export default function Home() {
               <div className="flex-grow"></div>
               <input
                 type="text"
-                className="border border-gray-300 rounded px-2 py-1 mr-4"
-                value="1 2 3"
-                readOnly
+                className="border border-gray-300 rounded px-1 py-1 w-40 mr-4"
+                placeholder="1 2 3"
               />
-              <select className="border border-gray-300 rounded px-2 py-1">
+              <select className="border border-gray-300 rounded px-1 py-1">
                 <option>1st Wrong School</option>
               </select>
             </div>
           </div>
           <div className="bg-white p-4 shadow-sm rounded-lg mb-4">
-            <div className="text-gray-500 text-sm mb-2">02/11 Saturday</div>
-            <div className="text-right text-gray-500 text-sm mb-2">
-              National Science and Maths Quiz
+            <div className="flex justify-between items-center mb-2">
+              <div className="text-gray-500 text-sm">02/11 Saturday</div>
+              <div className="text-gray-500 text-sm text-right">
+                National Science and Maths Quiz
+              </div>
             </div>
             <div className="border-t border-gray-200 pt-2">
               <div className="flex justify-between items-center mb-2">
@@ -728,48 +714,33 @@ export default function Home() {
                   <div className="flex-1">Accra High</div>
                   <div className="text-blue-500 w-8 text-center">3</div>
                   <div className="flex space-x-2">
-                    <button className="w-12 h-8 flex items-center justify-center border rounded">
+                    <button className="w-12  flex items-center justify-center border rounded">
                       <i className="fas fa-lock text-gray-500"></i>
                     </button>
-                    <input
-                      type="text"
-                      value="10.00"
-                      className="w-16 text-center border rounded p-1"
-                      readOnly
-                    />
-                    <input
-                      type="text"
-                      value="100.00"
-                      className="w-16 text-center border rounded p-1"
-                      readOnly
-                    />
-                    <input
-                      type="text"
-                      value="+1.10"
-                      className="w-16 text-center border rounded p-1"
-                      readOnly
-                    />
-                    <input
-                      type="text"
-                      value="+10.00"
-                      className="w-16 text-center border rounded p-1"
-                      readOnly
-                    />
-                    <input
-                      type="text"
-                      value="+50.00"
-                      className="w-16 text-center border rounded p-1 bg-blue-500 text-white"
-                      readOnly
-                    />
+                    <button className="w-12 text-center border rounded p-1 text-sm">
+                      10.00
+                    </button>
+                    <button className="w-12 text-center border rounded p-1 text-sm">
+                      100.00
+                    </button>
+                    <button className="w-12 text-center border rounded p-1 text-sm">
+                      +1.10
+                    </button>
+                    <button className="w-12 text-center border rounded p-1 text-sm">
+                      +10.00
+                    </button>
+                    <button className="w-12 text-center border rounded p-1 bg-blue-500 text-white text-sm">
+                      +50.00
+                    </button>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex-1">Accra Academy</div>
                   <div className="text-blue-500 w-12 pl-1 text-center">15</div>
                   <div className="flex space-x-2">
-                    <div className="w-16 text-center">Points</div>
-                    <div className="w-16 text-center">Over</div>
-                    <div className="w-16 text-center">Under</div>
+                    <div className="w-12 text-center">Points</div>
+                    <div className="w-12 text-center">Over</div>
+                    <div className="w-12 text-center">Under</div>
                     <div className="w-34 text-center">
                       Extra Markets Available
                     </div>
@@ -779,39 +750,28 @@ export default function Home() {
                   <div className="flex-1">St. Thomas Aquinas</div>
                   <div className="text-blue-500 w-8 text-center">0</div>
                   <div className="flex space-x-2">
-                    <select className="w-16 text-center border rounded p-1">
+                    <select className="w-12 text-sm text-center border rounded p-1">
                       <option value="20.00">20.00</option>
                     </select>
-                    <input
-                      type="text"
-                      value="20.00"
-                      className="w-16 text-center border rounded p-1"
-                      readOnly
-                    />
-                    <input
-                      type="text"
-                      value="15.00"
-                      className="w-16 text-center border rounded p-1"
-                      readOnly
-                    />
-                    <input
-                      type="text"
-                      value="20.00"
-                      className="w-16 text-center border rounded p-1"
-                      readOnly
-                    />
-                    <input
-                      type="text"
-                      value="20.00"
-                      className="w-16 text-center border rounded p-1"
-                      readOnly
-                    />
-                    <input
-                      type="text"
-                      value="15.00"
-                      className="w-16 text-center border rounded p-1"
-                      readOnly
-                    />
+                    <div className="flex space-x-2">
+                      <div className="flex space-x-2">
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          20.00
+                        </button>
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          15.00
+                        </button>
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          20.00
+                        </button>
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          20.00
+                        </button>
+                        <button className="w-12 text-center border rounded p-1 text-sm">
+                          15.00
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -836,7 +796,7 @@ export default function Home() {
       </div>
 
       {/* Right Sidebar */}
-      <div className="w-1/5 p-4">
+      <div className="w-1/5 p-2">
         <div className="bg-white rounded-2xl shadow-lg flex flex-col justify-between mb-4">
           <div className="p-6">
             <div className="flex justify-between border-b border-gray-200 pb-2 mb-4">
@@ -888,11 +848,11 @@ export default function Home() {
         <Matches />
 
         {/* Button */}
-        <div className="flex items-center bg-blue-600 rounded-full p-2 w-30 relative">
-          <div className="bg-blue-600 rounded-full p-2">
+        <div className="flex items-center bg-blue-600 rounded-full p-2 w-40 relative">
+          <div className="bg-blue-600 rounded-full p-1">
             <i className="fa-solid fa-headset text-white text-xl"></i>
           </div>
-          <div className="absolute right-0 bg-blue-600 rounded-full p-4 border-2 border-white">
+          <div className="absolute right-0 bg-blue-600 rounded-3xl p-2 border-2 border-white">
             <i className="fas fa-arrow-left text-white text-xl"></i>
           </div>
         </div>

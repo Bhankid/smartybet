@@ -72,7 +72,12 @@ function Nav() {
                 {item === "App" && (
                   <span
                     className="absolute top-0 right-0 bg-red-500 text-white rounded-full"
-                    style={{ fontSize: "0.48rem", padding: "0.1rem 0.2rem" }}
+                    style={{
+                      fontSize: "0.48rem",
+                      padding: "0.1rem 0.2rem",
+                      top: "-0.3rem",
+                      right: "0.1rem",
+                    }} 
                   >
                     Hot
                   </span>
