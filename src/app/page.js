@@ -176,9 +176,9 @@ export default function Home() {
       </div>
 
       {/* Main Content Area */}
-      <div className="w-3/5 p-4">
+      <div className="w-3/5 p-3">
         {/* Image Slider */}
-        <div className="bg-white p-2 rounded-lg shadow-md mb-4">
+        <div className="bg-white rounded-lg shadow-md mb-4">
           <div className="relative w-full h-60 overflow-hidden rounded-lg">
             <Image
               src={imageUrls[currentIndex]}
@@ -194,7 +194,7 @@ export default function Home() {
         </div>
 
         {/* Featured Quizzes */}
-        <div className="bg-white p-4 rounded-lg shadow-md mb-4">
+        <div className="bg-white p-2 rounded-lg shadow-md mb-4">
           <h2 className="text-xl font-bold text-gray-900 mb-4">
             Featured Quizzes
           </h2>
@@ -272,21 +272,35 @@ export default function Home() {
         </div>
 
         {/* Live Quizzes Section */}
-        <div className="bg-white rounded-lg shadow-md p-4 mb-4">
-          <div className="border-b pb-2 mb-4">
-            <h1 className="text-xl font-bold">Live</h1>
-            <div className="flex space-x-4 mt-2">
-              <button className="text-blue-500">All</button>
-              <button className="text-gray-500">NSMQ</button>
-              <button className="text-gray-500">JSMQ</button>
-              <button className="text-gray-500">Sharks</button>
-              <button className="text-gray-500">NIQC</button>
+        <div className="bg-[#f9fcff]  rounded-lg shadow-md p-4 mb-4">
+          <div className="p-4 bg-white rounded-lg shadow-sm mb-2">
+            <h1 className="text-xl font-bold mb-4">Live</h1>
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center space-x-4">
+                <button className="text-blue-500 font-semibold">All</button>
+                <button className="text-gray-500">NSMQ</button>
+                <button className="text-gray-500">JSMQ</button>
+                <button className="text-gray-500">Sharks</button>
+                <button className="text-gray-500">NIQC</button>
+              </div>
               <button className="text-gray-500">
                 More <i className="fas fa-chevron-down"></i>
               </button>
             </div>
+            <hr className="mb-4" />
+            <div className="flex justify-end items-center space-x-4">
+              <input
+                type="text"
+                className="border rounded px-2 py-1"
+                value="1 2 3"
+                readOnly
+              />
+              <select className="border rounded px-2 py-1">
+                <option>1st Correct School</option>
+              </select>
+            </div>
           </div>
-          <div className="flex justify-between items-center mb-4">
+          {/* <div className="flex justify-between items-center mb-4">
             <input
               type="text"
               className="border rounded p-2 w-1/3"
@@ -441,52 +455,202 @@ export default function Home() {
                 </span>
               </div>
             </div>
+          </div> */}
+
+          <div className="text-gray-500 text-sm mb-2">02/11 Saturday</div>
+          <div className="text-right text-gray-500 text-sm mb-2">
+            National Science and Maths Quiz
+          </div>
+          <div className="space-y-4">
+            {[1, 2].map((_, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
+                <div className="flex justify-between items-center mb-2">
+                  <div className="text-gray-500 text-sm">
+                    Round 1{" "}
+                    <span className="text-red-500">9&apos; 43&quot;</span>
+                  </div>
+                  <div className="text-blue-500 text-sm">+12 &gt;</div>
+                </div>
+                <div className="flex justify-between items-center mb-2">
+                  <div className="text-red-500 text-lg font-bold">NSMQ</div>
+                  <div className="flex space-x-2 text-center text-gray-500 text-sm">
+                    <div className="w-12">1</div>
+                    <div className="w-16">2</div>
+                    <div className="w-16">3</div>
+                    <div className="w-18">1st Correct School</div>
+                  </div>
+                </div>
+                <div className="space-y-1 mb-4">
+                  <div className="flex justify-between items-center">
+                    <div className="flex-1">Accra High</div>
+                    <div className="text-blue-500 w-8 text-center">3</div>
+                    <div className="flex space-x-2">
+                      <button className="w-12 h-8 flex items-center justify-center border rounded">
+                        <i className="fas fa-lock text-gray-500"></i>
+                      </button>
+                      <input
+                        type="text"
+                        value="10.00"
+                        className="w-16 text-center border rounded p-1"
+                        readOnly
+                      />
+                      <input
+                        type="text"
+                        value="100.00"
+                        className="w-16 text-center border rounded p-1"
+                        readOnly
+                      />
+                      <input
+                        type="text"
+                        value="+1.10"
+                        className="w-16 text-center border rounded p-1"
+                        readOnly
+                      />
+                      <input
+                        type="text"
+                        value="+10.00"
+                        className="w-16 text-center border rounded p-1"
+                        readOnly
+                      />
+                      <input
+                        type="text"
+                        value="+50.00"
+                        className="w-16 text-center border rounded p-1 bg-blue-500 text-white"
+                        readOnly
+                      />
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div className="flex-1">Accra Academy</div>
+                    <div className="text-blue-500 w-12 pl-1 text-center">
+                      15
+                    </div>
+                    <div className="flex space-x-2">
+                      <div className="w-16 text-center">Points</div>
+                      <div className="w-16 text-center">Over</div>
+                      <div className="w-16 text-center">Under</div>
+                      <div className="w-34 text-center">
+                        Extra Markets Available
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <div className="flex-1">St. Thomas Aquinas</div>
+                    <div className="text-blue-500 w-8 text-center">0</div>
+                    <div className="flex space-x-2">
+                      <select className="w-16 text-center border rounded p-1">
+                        <option value="20.00">20.00</option>
+                      </select>
+                      <input
+                        type="text"
+                        value="20.00"
+                        className="w-16 text-center border rounded p-1"
+                        readOnly
+                      />
+                      <input
+                        type="text"
+                        value="15.00"
+                        className="w-16 text-center border rounded p-1"
+                        readOnly
+                      />
+                      <input
+                        type="text"
+                        value="20.00"
+                        className="w-16 text-center border rounded p-1"
+                        readOnly
+                      />
+                      <input
+                        type="text"
+                        value="20.00"
+                        className="w-16 text-center border rounded p-1"
+                        readOnly
+                      />
+                      <input
+                        type="text"
+                        value="15.00"
+                        className="w-16 text-center border rounded p-1"
+                        readOnly
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="text-gray-500 text-sm mb-2">
+                  Round 1: <span className="text-blue-500">015</span>{" "}
+                  <span className="text-gray-500">012</span>{" "}
+                  <span className="text-red-500">003</span> | Round 2:{" "}
+                  <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span> | Round 3:{" "}
+                  <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>{" "}
+                  <span className="text-gray-500">000</span>
+                </div>
+                <div className="flex justify-end items-center">
+                  <i className="fas fa-fire text-red-500 mr-2"></i>
+                  <i className="fas fa-chart-line text-red-500"></i>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Quizzes Section */}
-        <div className="bg-white rounded-lg shadow p-4">
-          <h1 className="text-2xl font-bold mb-4">Quizzes</h1>
-          <div className="flex space-x-4 mb-4">
-            <button className="text-blue-500 border-b-2 border-blue-500 pb-1">
-              All
-            </button>
-            <button className="text-gray-500">NSMQ</button>
-            <button className="text-gray-500">JSMQ</button>
-            <button className="text-gray-500">Sharks</button>
-            <button className="text-gray-500">NIQC</button>
-            <button className="text-gray-500">More</button>
-          </div>
-          <div className="flex justify-between items-center mb-4">
-            <div className="flex space-x-4">
-              <button className="text-blue-500">Highlights</button>
-              <button className="text-gray-500">Today</button>
+        <div className=" bg-[#f9fcff] rounded-lg shadow p-4">
+          <div className="bg-white rounded-lg shadow-sm mb-4 p-4">
+            <h1 className="text-xl font-semibold mb-4">Quizzes</h1>
+            <div className="flex items-center border-b-2 border-gray-200 mb-4">
+              <button className="text-blue-500 font-semibold mx-4">All</button>
+              <button className="text-gray-500 mx-4">NSMQ</button>
+              <button className="text-gray-500 mx-4">JSMQ</button>
+              <button className="text-gray-500 mx-4">Sharks</button>
+              <button className="text-gray-500 mx-4">NIQC</button>
+              <div className="flex-grow"></div>
+              <button className="text-gray-500 flex items-center">
+                More <i className="fas fa-chevron-down ml-1"></i>
+              </button>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex items-center">
+              <button className="text-blue-500 font-semibold mr-4">
+                Highlights
+              </button>
+              <button className="text-gray-500 mr-4">Today</button>
+              <div className="border-r-2 border-gray-200 h-6 mr-4"></div>
+              <div className="flex-grow"></div>
               <input
                 type="text"
-                className="border rounded px-2 py-1"
-                placeholder="1 2 3"
+                className="border border-gray-300 rounded px-2 py-1 mr-4"
+                value="1 2 3"
+                readOnly
               />
-              <select className="border rounded px-2 py-1">
+              <select className="border border-gray-300 rounded px-2 py-1">
                 <option>1st Wrong School</option>
               </select>
             </div>
           </div>
-          <div className="bg-gray-50 p-4 rounded-lg mb-4">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-500">02/11 Saturday</span>
-              <span className="text-gray-500">
-                National Science and Maths Quiz
-              </span>
+          <div className="bg-white p-4 shadow-sm rounded-lg mb-4">
+            <div className="text-gray-500 text-sm mb-2">02/11 Saturday</div>
+            <div className="text-right text-gray-500 text-sm mb-2">
+              National Science and Maths Quiz
             </div>
             <div className="border-t border-gray-200 pt-2">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-red-500">Round 1</span>
-                <span className="text-red-500">9&apos; 43&quot;</span>
+                <div className="text-gray-500 text-sm">
+                  Round 1{" "}
+                  <span className=" text-red-500">9&apos; 43&quot;</span>
+                </div>
+                <div className="text-blue-500 text-sm">+12 &gt;</div>
               </div>
-              <div className="text-red-500 font-bold mb-2">NSMQ</div>
-              <div className="space-y-2 mb-4">
+              <div className="flex justify-between items-center mb-2">
+                <div className="text-red-500 text-lg font-bold">NSMQ</div>
+                <div className="flex space-x-2 text-center text-gray-500 text-sm">
+                  <div className="w-12">1</div>
+                  <div className="w-16">2</div>
+                  <div className="w-16">3</div>
+                  <div className="w-18">Regular vHandicap</div>
+                </div>
+              </div>
+
+              {/* <div className="space-y-2 mb-4">
                 <div className="flex justify-between items-center">
                   <span>Accra High</span>
                   <span className="text-blue-500">3</span>
@@ -499,8 +663,8 @@ export default function Home() {
                   <span>St. Thomas Aquinas</span>
                   <span className="text-blue-500">0</span>
                 </div>
-              </div>
-              <div className="flex justify-between items-center mb-2">
+              </div> */}
+              {/* <div className="flex justify-between items-center mb-2">
                 <div className="flex space-x-2">
                   <button className="bg-gray-200 rounded px-2 py-1">1</button>
                   <button className="bg-gray-200 rounded px-2 py-1">2</button>
@@ -557,16 +721,114 @@ export default function Home() {
                     15.00
                   </button>
                 </div>
+              </div> */}
+
+              <div className="space-y-1 mb-4">
+                <div className="flex justify-between items-center">
+                  <div className="flex-1">Accra High</div>
+                  <div className="text-blue-500 w-8 text-center">3</div>
+                  <div className="flex space-x-2">
+                    <button className="w-12 h-8 flex items-center justify-center border rounded">
+                      <i className="fas fa-lock text-gray-500"></i>
+                    </button>
+                    <input
+                      type="text"
+                      value="10.00"
+                      className="w-16 text-center border rounded p-1"
+                      readOnly
+                    />
+                    <input
+                      type="text"
+                      value="100.00"
+                      className="w-16 text-center border rounded p-1"
+                      readOnly
+                    />
+                    <input
+                      type="text"
+                      value="+1.10"
+                      className="w-16 text-center border rounded p-1"
+                      readOnly
+                    />
+                    <input
+                      type="text"
+                      value="+10.00"
+                      className="w-16 text-center border rounded p-1"
+                      readOnly
+                    />
+                    <input
+                      type="text"
+                      value="+50.00"
+                      className="w-16 text-center border rounded p-1 bg-blue-500 text-white"
+                      readOnly
+                    />
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <div className="flex-1">Accra Academy</div>
+                  <div className="text-blue-500 w-12 pl-1 text-center">15</div>
+                  <div className="flex space-x-2">
+                    <div className="w-16 text-center">Points</div>
+                    <div className="w-16 text-center">Over</div>
+                    <div className="w-16 text-center">Under</div>
+                    <div className="w-34 text-center">
+                      Extra Markets Available
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-between items-center">
+                  <div className="flex-1">St. Thomas Aquinas</div>
+                  <div className="text-blue-500 w-8 text-center">0</div>
+                  <div className="flex space-x-2">
+                    <select className="w-16 text-center border rounded p-1">
+                      <option value="20.00">20.00</option>
+                    </select>
+                    <input
+                      type="text"
+                      value="20.00"
+                      className="w-16 text-center border rounded p-1"
+                      readOnly
+                    />
+                    <input
+                      type="text"
+                      value="15.00"
+                      className="w-16 text-center border rounded p-1"
+                      readOnly
+                    />
+                    <input
+                      type="text"
+                      value="20.00"
+                      className="w-16 text-center border rounded p-1"
+                      readOnly
+                    />
+                    <input
+                      type="text"
+                      value="20.00"
+                      className="w-16 text-center border rounded p-1"
+                      readOnly
+                    />
+                    <input
+                      type="text"
+                      value="15.00"
+                      className="w-16 text-center border rounded p-1"
+                      readOnly
+                    />
+                  </div>
+                </div>
               </div>
-              <div className="flex justify-between items-center">
-                <div className="flex space-x-2">
-                  <span className="text-blue-500">Round 1: 015 012 003</span>
-                  <span className="text-gray-500">Round 2: 000 000 000</span>
-                  <span className="text-gray-500">Round 3: 000 000 000</span>
-                </div>
-                <div className="text-red-500">
-                  <i className="fas fa-fire"></i>
-                </div>
+              <div className="text-gray-500 text-sm mb-2">
+                Round 1: <span className="text-blue-500">015</span>{" "}
+                <span className="text-gray-500">012</span>{" "}
+                <span className="text-red-500">003</span> | Round 2:{" "}
+                <span className="text-gray-500">000</span>{" "}
+                <span className="text-gray-500">000</span>{" "}
+                <span className="text-gray-500">000</span> | Round 3:{" "}
+                <span className="text-gray-500">000</span>{" "}
+                <span className="text-gray-500">000</span>{" "}
+                <span className="text-gray-500">000</span>
+              </div>
+              <div className="flex justify-end items-center">
+                <i className="fas fa-fire text-red-500 mr-2"></i>
+                <i className="fas fa-chart-line text-red-500"></i>
               </div>
             </div>
           </div>
