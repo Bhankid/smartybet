@@ -57,6 +57,102 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [imageUrls.length]);
 
+  const cards = [
+    {
+      title: "NSMQ - Finals",
+      time: "19:45",
+      date: "Todav",
+      id: "123",
+      teams: [
+        {
+          logo: "https://i.postimg.cc/152FXy6V/ac.png",
+          name: "Accra Academy",
+          position: 1,
+          odds: 2.65,
+        },
+        {
+          logo: "https://i.postimg.cc/152FXy6V/ac.png",
+          name: "Accra Academy",
+          position: 2,
+          odds: 3.25,
+        },
+        {
+          logo: "https://i.postimg.cc/VNjn22Jr/ag.png",
+          name: "Accra Girls",
+          position: 3,
+          odds: 3.0,
+        },
+      ],
+    },
+
+    {
+      title: "NSMQ - Finals",
+      time: "19:45",
+      date: "Todav",
+      id: "124",
+      teams: [
+        {
+          logo: "https://i.postimg.cc/152FXy6V/ac.png",
+          name: "Accra Academy",
+          position: 1,
+          odds: 2.65,
+        },
+        {
+          logo: "https://i.postimg.cc/152FXy6V/ac.png",
+          name: "Accra Academy",
+          position: 2,
+          odds: 3.25,
+        },
+        {
+          logo: "https://i.postimg.cc/VNjn22Jr/ag.png",
+          name: "Accra Girls",
+          position: 3,
+          odds: 3.0,
+        },
+      ],
+    },
+    {
+      title: "NSMQ - Finals",
+      time: "19:45",
+      date: "Today",
+      id: "125",
+      teams: [
+        {
+          logo: "https://i.postimg.cc/152FXy6V/ac.png",
+          name: "Accra Academy",
+          position: 1,
+          odds: 2.65,
+        },
+        {
+          logo: "https://i.postimg.cc/152FXy6V/ac.png",
+          name: "Accra Academy",
+          position: 2,
+          odds: 3.25,
+        },
+        {
+          logo: "https://i.postimg.cc/VNjn22Jr/ag.png",
+          name: "Accra Girls",
+          position: 3,
+          odds: 3.0,
+        },
+      ],
+    },
+  ];
+
+  const [activeCardIndex, setActiveCardIndex] = useState(0);
+
+  const nextCard = () => {
+    if (activeCardIndex < cards.length - 1) {
+      setActiveCardIndex(activeCardIndex + 1);
+    }
+  };
+
+  const prevCard = () => {
+    if (activeCardIndex > 0) {
+      setActiveCardIndex(activeCardIndex - 1);
+    }
+  };
+
   return (
     <>
       <div className="block md:hidden p-2">
@@ -182,59 +278,62 @@ export default function Home() {
               height={20}
             />
           </div>
-          <div className="bg-blue-50 rounded-lg p-2">
-            <div className="flex justify-between items-center mb-2">
-              <div className="flex items-center">
-                <i className="fas fa-fire text-pink-500 mr-1"></i>
-                <span className="text-xs font-bold text-pink-500">
-                  NSMQ - Finals
-                </span>
-              </div>
-              <div className="text-xs">19:45</div>
-              <div className="text-xs">Todav</div>
-              <div className="text-xs">123</div>
+          <div className="relative overflow-hidden">
+            <div
+              className="flex transition-transform duration-300"
+              style={{ transform: `translateX(-${activeCardIndex * 100}%)` }}
+            >
+              {cards.map((card) => (
+                <div key={card.id} className="min-w-full flex flex-col">
+                  <div className="bg-blue-50 rounded-lg p-2">
+                    <div className="flex justify-between items-center mb-2">
+                      <div className="flex items-center">
+                        <i className="fas fa-fire text-pink-500 mr-1"></i>
+                        <span className="text-xs font-bold text-pink-500">
+                          {card.title}
+                        </span>
+                      </div>
+                      <div className="text-xs">{card.time}</div>
+                      <div className="text-xs">{card.date}</div>
+                      <div className="text-xs">{card.id}</div>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      {card.teams.map((team, idx) => (
+                        <div key={idx} className="flex flex-col items-center">
+                          <Image
+                            src={team.logo}
+                            alt={`${team.name} logo`}
+                            className="mb-1"
+                            width={20}
+                            height={20}
+                          />
+                          <span className="text-xs">{team.name}</span>
+                          <span className="text-xs">{team.position}</span>
+                          <span className="text-xs">{team.odds}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="flex justify-between items-center">
-              <div className="flex flex-col items-center">
-                <Image
-                  src="https://i.postimg.cc/152FXy6V/ac.png"
-                  alt="Accra Academy logo"
-                  className="mb-1"
-                  width={20}
-                  height={20}
-                />
-                <span className="text-xs">Accra Academy</span>
-                <span className="text-xs">1</span>
-                <span className="text-xs">2.65</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <Image
-                  src="https://i.postimg.cc/152FXy6V/ac.png"
-                  alt="Accra Academy logo"
-                  className="mb-1"
-                  width={20}
-                  height={20}
-                />
-                <span className="text-xs">Accra Academy</span>
-                <span className="text-xs">2</span>
-                <span className="text-xs">3.25</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <Image
-                  src="https://i.postimg.cc/VNjn22Jr/ag.png"
-                  alt="Accra Girls logo"
-                  className="mb-1"
-                  crossOrigin="anonymous"
-                  width={20}
-                  height={20}
-                />
-                <span className="text-xs">Accra Girls</span>
-                <span className="text-xs">3</span>
-                <span className="text-xs">3.00</span>
-              </div>
-              <div className="flex items-center">
-                <i className="fas fa-chevron-right text-gray-500"></i>
-              </div>
+            <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
+              {activeCardIndex > 0 && (
+                <button onClick={prevCard} className="text-gray-500">
+                  <i className="fas fa-chevron-left"></i>
+                </button>
+              )}
+            </div>
+            <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
+              {activeCardIndex < cards.length - 1 ? (
+                <button onClick={nextCard} className="text-gray-500">
+                  <i className="fas fa-chevron-right"></i>
+                </button>
+              ) : (
+                <button onClick={prevCard} className="text-gray-500">
+                  <i className="fas fa-chevron-left"></i>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -253,19 +352,31 @@ export default function Home() {
               <div className="text-gray-500 text-sm cursor-pointer">Sharks</div>
             </div>
           </div>
-          <div className="flex justify-center mb-2">
-            <div className="flex space-x-2">
+          <div className="flex justify-center mb-2 overflow-hidden">
+            <div className="flex space-x-2 overflow-x-auto whitespace-nowrap">
               <button className="bg-blue-500 text-white rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 1 2 3
               </button>
               <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer whitespace-nowrap">
                 Over / Under
               </button>
-              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6  cursor-pointer">
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 Handicap
               </button>
               <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 Round
+              </button>
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer">
+                First Correct School
+              </button>
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer">
+                First Wrong School
+              </button>
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer">
+                First Correct Bonus
+              </button>
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer">
+                Winner of All Rounds
               </button>
             </div>
           </div>
@@ -410,20 +521,34 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="flex justify-between items-center mb-4">
-            <button className="border border-blue-500  text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
-              1 2 3
-            </button>
-            <div className="flex space-x-2">
-              <button className="bg-blue-500 text-white rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer whitespace-nowrap">
-                Over / Under
+          <div className="flex justify-between items-center mb-4 overflow-hidden">
+            <div className="flex space-x-2 overflow-x-auto whitespace-nowrap">
+              <button className="border border-blue-500  text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
+                1 2 3
               </button>
-              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
-                Handicap
-              </button>
-              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
-                Round
-              </button>
+              <div className="flex space-x-2">
+                <button className="bg-blue-500 text-white rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer whitespace-nowrap">
+                  Over / Under
+                </button>
+                <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
+                  Handicap
+                </button>
+                <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
+                  Round
+                </button>
+                <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer">
+                  First Correct School
+                </button>
+                <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer">
+                  First Wrong School
+                </button>
+                <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer">
+                  First Correct Bonus
+                </button>
+                <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer">
+                  Winner of All Rounds
+                </button>
+              </div>
             </div>
           </div>
           <div className="bg-white p-0 w-full rounded-lg ">
