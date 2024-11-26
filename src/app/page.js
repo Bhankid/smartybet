@@ -203,7 +203,7 @@ export default function Home() {
         </div>
         <div className="bg-white rounded-lg shadow p-1 mb-2 overflow-hidden">
           <div
-            className="odds"
+            className="odds scrollable-buttons"
             style={{ display: "flex", overflowX: "auto", whiteSpace: "nowrap" }}
           >
             <button className="bg-blue-100 rounded-full px-1 py-1 text-xs mx-1">
@@ -353,7 +353,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center mb-2 overflow-hidden">
-            <div className="flex space-x-2 overflow-x-auto whitespace-nowrap">
+            <div className="flex space-x-2 overflow-x-auto whitespace-nowrap scrollable-buttons">
               <button className="bg-blue-500 text-white rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 1 2 3
               </button>
@@ -522,7 +522,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-between items-center mb-4 overflow-hidden">
-            <div className="flex space-x-2 overflow-x-auto whitespace-nowrap">
+            <div className="flex space-x-2 overflow-x-auto whitespace-nowrap scrollable-buttons">
               <button className="border border-blue-500  text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 1 2 3
               </button>
