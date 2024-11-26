@@ -380,8 +380,8 @@ export default function Home() {
               </button>
             </div>
           </div>
-          <div className="bg-blue-100 rounded-lg p-0.5 h-6 mb-4">
-            <div className="flex justify-end space-x-6 text-blue-500">
+          <div className="bg-gray-100 rounded-lg p-0.5 h-6 mb-4">
+            <div className="flex justify-end space-x-6 text-gray-500">
               <div className="mr-2 pr-4">1</div>
               <div className="mr-2 pr-4">2</div>
               <div className="mr-2 pr-4">3</div>
@@ -552,7 +552,7 @@ export default function Home() {
             </div>
           </div>
           <div className="bg-white p-0 w-full rounded-lg ">
-            <div className="bg-blue-100 p-0.5 h-6 rounded-lg mb-2 flex justify-end text-gray-500 text-sm">
+            <div className="bg-gray-100 p-0.5 h-6 rounded-lg mb-2 flex justify-end text-gray-500 text-sm">
               <span className="mr-8">Points</span>
               <span className="mr-8">Over</span>
               <span>Under</span>
