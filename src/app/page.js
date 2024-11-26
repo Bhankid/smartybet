@@ -914,11 +914,14 @@ export default function Home() {
               </div>
               <hr className="mb-4" />
               <div className="flex justify-end items-center space-x-4">
-                <input
-                  type="text"
-                  className="border rounded px-2 py-1 w-40"
-                  placeholder="1 2 3"
-                />
+                <button
+                  className="border border-gray-300 rounded px-1 py-1 w-36 mr-4 bg-white text-gray-700 cursor-pointer"
+                  disabled
+                >
+                  <span className="mr-2 pr-6">1</span>
+                  <span className="mr-2 pr-6">2</span>
+                  <span className="mr-2 pr-6">3</span>
+                </button>
                 <select className="border rounded px-1 py-1">
                   <option>1st Correct School</option>
                 </select>
@@ -944,9 +947,14 @@ export default function Home() {
                   <div className="flex justify-between items-center mb-2">
                     <div className="text-red-500 text-lg font-bold">NSMQ</div>
                     <div className="flex space-x-2 text-center -ml-4 mr-10 text-gray-500 text-sm">
-                      <div className="w-14">1</div>
-                      <div className="w-14">2</div>
-                      <div className="w-14">3</div>
+                      <button
+                        className="border-none rounded px-1 py-1 w-40 mr-4 bg-white text-gray-700 cursor-pointer"
+                        disabled
+                      >
+                        <span className="mr-2 pr-6">1</span>
+                        <span className="mr-2 pr-6">2</span>
+                        <span className="mr-2 pr-6">3</span>
+                      </button>
                       <div className="w-18 mr-4">1st Correct School</div>
                     </div>
                   </div>
@@ -1068,11 +1076,14 @@ export default function Home() {
                 <button className="text-gray-500 mr-4">Today</button>
                 <div className="border-r-2 border-gray-200 h-6 mr-4"></div>
                 <div className="flex-grow"></div>
-                <input
-                  type="text"
-                  className="border border-gray-300 rounded px-1 py-1 w-40 mr-4"
-                  placeholder="1 2 3"
-                />
+                <button
+                  className="border border-gray-300 rounded px-1 py-1 w-40 mr-4 bg-white text-gray-700 cursor-pointer"
+                  disabled
+                >
+                  <span className="mr-2 pr-6">1</span>
+                  <span className="mr-2 pr-6">2</span>
+                  <span className="mr-2 pr-6">3</span>
+                </button>
                 <select className="border border-gray-300 rounded px-1 py-1">
                   <option>1st Wrong School</option>
                 </select>
@@ -1102,79 +1113,6 @@ export default function Home() {
                     <div className="w-18">Regular vHandicap</div>
                   </div>
                 </div>
-
-                {/* <div className="space-y-2 mb-4">
-                <div className="flex justify-between items-center">
-                  <span>Accra High</span>
-                  <span className="text-blue-500">3</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Accra Academy</span>
-                  <span className="text-blue-500">15</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>St. Thomas Aquinas</span>
-                  <span className="text-blue-500">0</span>
-                </div>
-              </div> */}
-                {/* <div className="flex justify-between items-center mb-2">
-                <div className="flex space-x-2">
-                  <button className="bg-gray-200 rounded px-2 py-1">1</button>
-                  <button className="bg-gray-200 rounded px-2 py-1">2</button>
-                  <button className="bg-gray-200 rounded px-2 py-1">3</button>
-                </div>
-                <div className="flex space-x-2">
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    Regular vHandicap
-                  </button>
-                  <button className="bg-gray-200 rounded px-2 py-1">+12</button>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <div className="flex space-x-2">
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    10.00
-                  </button>
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    100.00
-                  </button>
-                </div>
-                <div className="flex space-x-2">
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    +1.10
-                  </button>
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    +10.00
-                  </button>
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    +50.00
-                  </button>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <div className="flex space-x-2">
-                  <select className="bg-gray-200 rounded px-2 py-1">
-                    <option>20.00</option>
-                  </select>
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    20.00
-                  </button>
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    15.00
-                  </button>
-                </div>
-                <div className="flex space-x-2">
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    20.00
-                  </button>
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    20.00
-                  </button>
-                  <button className="bg-gray-200 rounded px-2 py-1">
-                    15.00
-                  </button>
-                </div>
-              </div> */}
 
                 <div className="space-y-1 mb-4">
                   <div className="flex justify-between items-center">
