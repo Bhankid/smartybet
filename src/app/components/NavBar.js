@@ -45,14 +45,11 @@ function Nav() {
             <i className="fas fa-eye"></i>
             <i className="fas fa-sync-alt"></i>
           </div>
-          <div className="border-l-2 border-white h-5"></div>{" "}
-          {/* Thicker vertical border */}
+          <div className="border-l-2 border-white h-6"></div>
           <Link href="/deposit">Deposit</Link>
-          <div className="border-l-2 border-white h-5"></div>{" "}
-          {/* Thicker vertical border */}
+          <div className="border-l-2 border-white h-6"></div>
           <Link href="/my-bets">My Bets</Link>
-          <div className="border-l-2 border-white h-5"></div>{" "}
-          {/* Thicker vertical border */}
+          <div className="border-l-2 border-white h-6"></div>
           <Link href="/my-account" className="flex items-center">
             My Account <i className="fa fa-angle-down ml-1"></i>
           </Link>
@@ -79,9 +76,9 @@ function Nav() {
                     className="absolute top-0 right-0 bg-red-500 text-white rounded-full"
                     style={{
                       fontSize: "0.48rem",
-                      padding: "0.1rem 0.2rem",
+                      padding: "0.1rem 0.1rem",
                       top: "-0.3rem",
-                      right: "0.1rem",
+                      right: "0.01rem",
                     }}
                   >
                     Hot

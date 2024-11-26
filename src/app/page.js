@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <>
       <div className="block md:hidden p-2">
-        <div className="bg-blue-200 h-24 mb-2 overflow-hidden">
+        <div className="bg-blue-200 h-24 rounded mb-2 overflow-hidden">
           <div className="marquee">
             <img
               src="https://i.postimg.cc/bJ24mP2j/qz.png"
@@ -79,7 +79,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="bg-white rounded-lg shadow p-2 mb-2 flex justify-around">
+        <div className="bg-white rounded-lg shadow p-4 mb-2 flex justify-around">
           <div className="flex flex-col items-center">
             <i className="fas fa-home text-xl mb-1"></i>
             <span className="text-xs">Home</span>
@@ -137,11 +137,11 @@ export default function Home() {
           </div>
         </div>
         <div className="bg-white rounded-lg shadow p-2">
-          <div className="flex items-center mb-2 bg-blue-100 rounded-lg p-1">
+          <div className="flex items-center mb-2 bg-blue-100 rounded-lg p-0.5">
             <Image
               src="https://i.postimg.cc/152FXy6V/ac.png"
               alt="Accra Academy logo"
-              className="mb-1"
+              className="mb-1 mr-2"
               width={20}
               height={20}
             />
@@ -149,35 +149,35 @@ export default function Home() {
             <Image
               src="https://i.postimg.cc/152FXy6V/ac.png"
               alt="Accra Academy logo"
-              className="mb-1"
+              className="mb-1 mr-2"
               width={20}
               height={20}
             />
             <Image
               src="https://i.postimg.cc/152FXy6V/ac.png"
               alt="Accra Academy logo"
-              className="mb-1"
+              className="mb-1 mr-2"
               width={20}
               height={20}
             />
             <Image
               src="https://i.postimg.cc/152FXy6V/ac.png"
               alt="Accra Academy logo"
-              className="mb-1"
+              className="mb-1 mr-2"
               width={20}
               height={20}
             />
             <Image
               src="https://i.postimg.cc/152FXy6V/ac.png"
               alt="Accra Academy logo"
-              className="mb-1"
+              className="mb-1 mr-2"
               width={20}
               height={20}
             />
             <Image
               src="https://i.postimg.cc/152FXy6V/ac.png"
               alt="Accra Academy logo"
-              className="mb-1"
+              className="mb-1 mr-2"
               width={20}
               height={20}
             />
@@ -240,7 +240,7 @@ export default function Home() {
         </div>
 
         {/* Two */}
-        <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-4 mt-10">
+        <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-2 mt-10">
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center">
               <div className="text-lg font-bold">LIVE</div>
@@ -254,7 +254,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-center mb-2">
-            <div className="flex space-x-4">
+            <div className="flex space-x-2">
               <button className="bg-blue-500 text-white rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 1 2 3
               </button>
@@ -270,10 +270,10 @@ export default function Home() {
             </div>
           </div>
           <div className="bg-blue-100 rounded-lg p-0.5 h-6 mb-4">
-            <div className="flex justify-end space-x-8 text-blue-500">
-              <div className="mr-4 pr-6">1</div>
-              <div className="mr-4 pr-6">2</div>
-              <div className="mr-4 pr-6">3</div>
+            <div className="flex justify-end space-x-6 text-blue-500">
+              <div className="mr-2 pr-4">1</div>
+              <div className="mr-2 pr-4">2</div>
+              <div className="mr-2 pr-4">3</div>
             </div>
           </div>
           <div className="border-t border-gray-200 mt-4 pt-4 relative">
@@ -283,10 +283,10 @@ export default function Home() {
               <div className="text-blue-500 text-sm">NSMQ</div>
             </div>
             <div className="flex justify-between items-center mb-2">
-              <div className="text-gray-700">Accra Academy</div>
-              <div className="text-gray-700">15</div>
+              <div className="text-gray-700 text-sm">Accra Academy</div>
+              <div className="text-blue-600 pr-36 mr-2">15</div>
               <div className="flex space-x-2">
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                {/* <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   9.75
                 </div>
                 <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
@@ -294,37 +294,37 @@ export default function Home() {
                 </div>
                 <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   1.45
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="flex justify-between items-center mb-2">
-              <div className="text-gray-700">Accra Academy</div>
-              <div className="text-gray-700">15</div>
+              <div className="text-gray-700 text-sm">Accra Academy</div>
+              <div className="text-blue-600">15</div>
               <div className="flex space-x-2">
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   9.75
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   3.40
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   1.45
-                </div>
+                </button>
               </div>
             </div>
             <div className="flex justify-between items-center mb-2">
-              <div className="text-gray-700">Accra Academy</div>
-              <div className="text-gray-700">15</div>
+              <div className="text-gray-700 text-sm">Accra Academy</div>
+              <div className="text-blue-600 pr-36 mr-2">15</div>
               <div className="flex space-x-2">
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                {/* <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   9.75
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   3.40
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   1.45
-                </div>
+                </button> */}
               </div>
             </div>
           </div>
@@ -338,58 +338,60 @@ export default function Home() {
               <div className="text-blue-500 text-sm">Sharks</div>
             </div>
             <div className="flex justify-between items-center mb-2">
-              <div className="text-gray-700">Accra Academy</div>
-              <div className="text-gray-700">15</div>
+              <div className="text-gray-700 text-sm">Accra Academy</div>
+              <div className="text-blue-600 pr-36 mr-2">15</div>
               <div className="flex space-x-2">
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                {/* <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   9.75
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   3.40
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   1.45
-                </div>
+                </button> */}
               </div>
             </div>
             <div className="flex justify-between items-center mb-2">
-              <div className="text-gray-700">Accra Academy</div>
-              <div className="text-gray-700">15</div>
+              <div className="text-gray-700 text-sm">Accra Academy</div>
+              <div className="text-blue-600">15</div>
               <div className="flex space-x-2">
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   9.75
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   3.40
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   1.45
-                </div>
+                </button>
               </div>
             </div>
             <div className="flex justify-between items-center mb-2">
-              <div className="text-gray-700">Accra Academy</div>
-              <div className="text-gray-700">15</div>
+              <div className="text-gray-700 text-sm">Accra Academy</div>
+              <div className="text-blue-600 pr-36 mr-2">15</div>
               <div className="flex space-x-2">
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                {/* <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   9.75
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   3.40
-                </div>
-                <div className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                </button>
+                <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
                   1.45
-                </div>
+                </button> */}
               </div>
             </div>
           </div>
-          <div className="text-blue-500 text-center mt-4 cursor-pointer">
-            All Events <i className="fas fa-chevron-right"></i>
-          </div>
+          <Link href="/all-events">
+            <div className="text-blue-500 text-center mt-4 cursor-pointer">
+              All Events <i className="fas fa-chevron-right"></i>
+            </div>
+          </Link>
         </div>
 
         {/* Three */}
-        <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-4 mt-10">
+        <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-1 mt-10">
           <div className="flex justify-between items-center mb-4">
             <h1 className="text-lg font-semibold">Quizzes</h1>
             <div className="border-l-2 border-blue-500 h-6 mx-2"></div>
@@ -409,99 +411,135 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-between items-center mb-4">
-            <button className="px-3 py-1 border rounded-full text-blue-500 border-blue-500 text-sm">
+            <button className="border border-blue-500  text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
               1 2 3
             </button>
             <div className="flex space-x-2">
-              <button className="px-3 py-1 bg-blue-500 text-white rounded-full text-sm">
+              <button className="bg-blue-500 text-white rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer whitespace-nowrap">
                 Over / Under
               </button>
-              <button className="px-3 py-1 border rounded-full text-blue-500 border-blue-500 text-sm">
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 Handicap
               </button>
-              <button className="px-3 py-1 border rounded-full text-blue-500 border-blue-500 text-sm">
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 Round
               </button>
             </div>
           </div>
-          <div className="bg-gray-100 p-2 rounded-lg mb-4">
-            <div className="bg-blue-100 p-2 rounded-lg mb-2 flex justify-end text-gray-500 text-sm">
+          <div className="bg-white p-0 w-full rounded-lg ">
+            <div className="bg-blue-100 p-0.5 h-6 rounded-lg mb-2 flex justify-end text-gray-500 text-sm">
               <span className="mr-8">Points</span>
               <span className="mr-8">Over</span>
               <span>Under</span>
             </div>
             <div className="mb-4">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-gray-500">21 Nov 13:15</span>
-                <span className="text-blue-500">JSMQ</span>
+                <span className="text-gray-500 text-sm">21 Nov 13:15</span>
+                <span className="text-blue-500 text-sm">JSMQ</span>
               </div>
               <div className="flex justify-between items-center mb-2">
-                <span>Accra Academy</span>
-                <span className="text-blue-500">15</span>
+                <span className="text-sm">Accra Academy</span>
+                <span className="text-blue-500 pr-36 mr-2">15</span>
                 <div className="flex space-x-2">
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">9.75</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">3.40</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">1.45</span>
+                  {/* <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    9.75
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    3.40
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    1.45
+                  </button> */}
                 </div>
               </div>
               <div className="flex justify-between items-center mb-2">
-                <span>Accra Academy</span>
+                <span className="text-sm">Accra Academy</span>
                 <span className="text-blue-500">15</span>
                 <div className="flex space-x-2">
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">9.75</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">3.40</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">1.45</span>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    9.75
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    3.40
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    1.45
+                  </button>
                 </div>
               </div>
               <div className="flex justify-between items-center mb-2">
-                <span>Accra Academy</span>
-                <span className="text-blue-500">15</span>
+                <span className="text-sm">Accra Academy</span>
+                <span className="text-blue-500 pr-36 mr-2">15</span>
                 <div className="flex space-x-2">
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">9.75</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">3.40</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">1.45</span>
+                  {/* <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    9.75
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    3.40
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    1.45
+                  </button> */}
                 </div>
               </div>
             </div>
             <div className="border-t border-gray-300 mb-4"></div>
-            <div className="mb-4">
+            <div className="mb-2">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-gray-500">30 Dec 01:00</span>
                 <span className="text-blue-500">Sharks</span>
               </div>
               <div className="flex justify-between items-center mb-2">
-                <span>Accra Academy</span>
-                <span className="text-blue-500">15</span>
+                <span className="text-sm">Accra Academy</span>
+                <span className="text-blue-500 pr-36 mr-2">15</span>
                 <div className="flex space-x-2">
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">9.75</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">3.40</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">1.45</span>
+                  {/* <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    9.75
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    3.40
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    1.45
+                  </button> */}
                 </div>
               </div>
               <div className="flex justify-between items-center mb-2">
-                <span>Accra Academy</span>
+                <span className="text-sm">Accra Academy</span>
                 <span className="text-blue-500">15</span>
                 <div className="flex space-x-2">
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">9.75</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">3.40</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">1.45</span>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    9.75
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    3.40
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    1.45
+                  </button>
                 </div>
               </div>
               <div className="flex justify-between items-center mb-2">
-                <span>Accra Academy</span>
-                <span className="text-blue-500">15</span>
+                <span className="text-sm">Accra Academy</span>
+                <span className="text-blue-500 pr-36 mr-2">15</span>
                 <div className="flex space-x-2">
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">9.75</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">3.40</span>
-                  <span className="bg-gray-200 px-3 py-1 rounded-lg">1.45</span>
+                  {/* <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    9.75
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    3.40
+                  </button>
+                  <button className="bg-gray-100 text-gray-700 rounded px-2 py-1">
+                    1.45
+                  </button> */}
                 </div>
               </div>
             </div>
           </div>
           <div className="text-center">
-            <a href="#" className="text-blue-500">
+            <Link href="/full-schedule" className="text-blue-500">
               Full Schedule <i className="fas fa-chevron-right"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -655,7 +693,7 @@ export default function Home() {
           </div>
 
           {/* Featured Quizzes */}
-          <div className="bg-white p-2 rounded-lg shadow-md mb-4">
+          <div className="bg-white p-1 rounded-lg shadow-md mb-4">
             <h2 className="text-xl font-bold text-gray-900 mb-4">
               Featured Quizzes
             </h2>
@@ -664,7 +702,7 @@ export default function Home() {
                 {cardsData.map((card, index) => (
                   <div
                     key={index}
-                    className="bg-[#E7EDF6] rounded-lg shadow p-4 flex-shrink-0"
+                    className="bg-[#E7EDF6] rounded-lg p-1 flex-shrink-0"
                   >
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-semibold">
@@ -734,7 +772,7 @@ export default function Home() {
           </div>
 
           {/* Live Quizzes Section */}
-          <div className="bg-[#f9fcff]  rounded-lg shadow-md p-4 mb-4">
+          <div className="bg-[#f9fcff]  rounded-lg shadow-md p-0.5 mb-4">
             <div className="p-4 bg-white rounded-lg shadow-sm mb-2">
               <h1 className="text-xl font-bold mb-4">Live</h1>
               <div className="flex items-center justify-between mb-2">
@@ -1036,8 +1074,8 @@ export default function Home() {
           </div>
 
           {/* Quizzes Section */}
-          <div className=" bg-[#f9fcff] rounded-lg shadow p-4">
-            <div className="bg-white rounded-lg shadow-sm mb-4 p-4">
+          <div className=" bg-[#f9fcff] rounded-lg shadow p-0.5">
+            <div className="bg-white rounded-lg shadow-sm mb-4 p-2">
               <h1 className="text-xl font-semibold mb-4">Quizzes</h1>
               <div className="flex items-center border-b-2 border-gray-200 mb-4">
                 <button className="text-blue-500 font-semibold mx-4">
@@ -1069,7 +1107,7 @@ export default function Home() {
                 </select>
               </div>
             </div>
-            <div className="bg-white p-4 shadow-sm rounded-lg mb-4">
+            <div className="bg-white p-1 shadow-sm rounded-lg mb-2">
               <div className="flex justify-between items-center mb-2">
                 <div className="text-gray-500 text-sm">02/11 Saturday</div>
                 <div className="text-gray-500 text-sm text-right">
@@ -1086,7 +1124,7 @@ export default function Home() {
                 </div>
                 <div className="flex justify-between items-center mb-2">
                   <div className="text-red-500 text-lg font-bold">NSMQ</div>
-                  <div className="flex space-x-2 text-center text-gray-500 -ml-4 mr-10 text-sm">
+                  <div className="flex space-x-2 text-center text-gray-500 -ml-2 mr-6 text-sm">
                     <div className="w-12">1</div>
                     <div className="w-16">2</div>
                     <div className="w-16">3</div>
@@ -1283,7 +1321,7 @@ export default function Home() {
                 >
                   My Bets
                   {activeTab === "My Bets" && (
-                    <div className="absolute bottom-0 left-0 w-full h-1' bg-blue-600 rounded-full"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 rounded-full"></div>
                   )}
                 </div>
               </div>
