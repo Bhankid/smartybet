@@ -17,15 +17,20 @@ function Nav() {
   ];
 
   return (
-    <div className="bg-blue-600 text-white flex flex-col md:px-16 py-4">
+    <div className="bg-blue-600 text-white flex flex-col md:px-16 py-2">
       {/* Mobile Layout */}
-      <div className="flex items-center justify-between mb-4 md:hidden">
-        <div className="text-2xl font-bold">SmartyBet</div>
-        <div className="flex items-center space-x-4">
-          <button className="bg-white text-blue-600 px-4 py-2 rounded">
-            Join Now
-          </button>
-          <button className="border border-white text-white px-4 py-2 rounded">
+      <div className="flex items-center justify-between ml-3 mb-4 md:hidden">
+        <div className="text-lg font-bold">SmartyBet</div>
+        <div className="flex items-center space-x-3 mr-4">
+         
+          <div className="flex items-center space-x-1">
+            <i className="fas fa-search text-white text-sm mr-1"></i>
+            <button className="bg-white text-blue-600 px-1 py-0.5 rounded">
+              Join Now
+            </button>
+          </div>
+          <button className="border border-white text-white px-1 py-0.5 rounded mr-4">
+            
             Login
           </button>
         </div>
@@ -77,7 +82,7 @@ function Nav() {
                       padding: "0.1rem 0.2rem",
                       top: "-0.3rem",
                       right: "0.1rem",
-                    }} 
+                    }}
                   >
                     Hot
                   </span>
@@ -91,9 +96,9 @@ function Nav() {
       </div>
 
       {/* Search Icon for Mobile */}
-      <div className="flex justify-end mt-2 md:hidden">
+      {/* <div className="flex justify-end mt-2 mr-4 md:hidden">
         <i className="fas fa-search"></i>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -105,30 +105,33 @@ export default function Home() {
             <span className="text-xs">More</span>
           </div>
         </div>
-        <div className="bg-white rounded-lg shadow p-2 mb-2 overflow-hidden">
-          <div className="marquee">
-            <button className="bg-blue-100 rounded-full px-2 py-1 text-xs mx-1">
+        <div className="bg-white rounded-lg shadow p-1 mb-2 overflow-hidden">
+          <div
+            className="odds"
+            style={{ display: "flex", overflowX: "auto", whiteSpace: "nowrap" }}
+          >
+            <button className="bg-blue-100 rounded-full px-1 py-1 text-xs mx-1">
               Best Odds
             </button>
-            <button className="bg-blue-100 rounded-full px-2 py-1 text-xs mx-1">
+            <button className="bg-blue-100 rounded-full px-1 py-1 text-xs mx-1">
               Quizzes Today
             </button>
-            <button className="bg-blue-100 rounded-full px-2 py-1 text-xs mx-1">
+            <button className="bg-blue-100 rounded-full px-1 py-1 text-xs mx-1">
               Odds &lt; 2.0
             </button>
-            <button className="bg-blue-100 rounded-full px-2 py-1 text-xs mx-1">
+            <button className="bg-blue-100 rounded-full px-1 py-1 text-xs mx-1">
               Booking Code
             </button>
-            <button className="bg-blue-100 rounded-full px-2 py-1 text-xs mx-1">
+            <button className="bg-blue-100 rounded-full px-1 py-1 text-xs mx-1">
               Best Odds
             </button>
-            <button className="bg-blue-100 rounded-full px-2 py-1 text-xs mx-1">
+            <button className="bg-blue-100 rounded-full px-1 py-1 text-xs mx-1">
               Quizzes Today
             </button>
-            <button className="bg-blue-100 rounded-full px-2 py-1 text-xs mx-1">
+            <button className="bg-blue-100 rounded-full px-1 py-1 text-xs mx-1">
               Odds &lt; 2.0
             </button>
-            <button className="bg-blue-100 rounded-full px-2 py-1 text-xs mx-1">
+            <button className="bg-blue-100 rounded-full px-1 py-1 text-xs mx-1">
               Booking Code
             </button>
           </div>
@@ -241,36 +244,36 @@ export default function Home() {
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center">
               <div className="text-lg font-bold">LIVE</div>
-              <div className="h-6 border-l-2 border-blue-500 mx-2"></div>
-              <div className="text-blue-500 cursor-pointer">All</div>
+              <div className="h-6 border-l-2 border-blue-500 mx-4"></div>
+              <div className="text-blue-500 text-sm cursor-pointer">All</div>
             </div>
             <div className="flex space-x-4">
-              <div className="text-gray-500 cursor-pointer">NSMQ</div>
-              <div className="text-gray-500 cursor-pointer">JSMQ</div>
-              <div className="text-gray-500 cursor-pointer">Sharks</div>
+              <div className="text-gray-500 text-sm cursor-pointer">NSMQ</div>
+              <div className="text-gray-500 text-sm cursor-pointer">JSMQ</div>
+              <div className="text-gray-500 text-sm cursor-pointer">Sharks</div>
             </div>
           </div>
-          <div className="flex justify-center mb-4">
-            <div className="flex space-x-2">
-              <button className="bg-blue-500 text-white rounded-full px-3 py-1 text-sm md:px-2 md:py-1 md:text-base cursor-pointer">
+          <div className="flex justify-center mb-2">
+            <div className="flex space-x-4">
+              <button className="bg-blue-500 text-white rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 1 2 3
               </button>
-              <button className="border border-blue-500 text-blue-500 rounded-full px-3 py-1 text-sm md:px-2 md:py-1 md:text-base cursor-pointer">
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs h-6 cursor-pointer whitespace-nowrap">
                 Over / Under
               </button>
-              <button className="border border-blue-500 text-blue-500 rounded-full px-3 py-1 text-sm md:px-2 md:py-1 md:text-base cursor-pointer">
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6  cursor-pointer">
                 Handicap
               </button>
-              <button className="border border-blue-500 text-blue-500 rounded-full px-3 py-1 text-sm md:px-2 md:py-1 md:text-base cursor-pointer">
+              <button className="border border-blue-500 text-blue-500 rounded-full px-1 py-0.5 text-xs w-14 h-6 cursor-pointer">
                 Round
               </button>
             </div>
           </div>
-          <div className="bg-blue-100 rounded-lg p-1 mb-4">
-            <div className="flex justify-end space-x-4 text-blue-500">
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
+          <div className="bg-blue-100 rounded-lg p-0.5 h-6 mb-4">
+            <div className="flex justify-end space-x-8 text-blue-500">
+              <div className="mr-4 pr-6">1</div>
+              <div className="mr-4 pr-6">2</div>
+              <div className="mr-4 pr-6">3</div>
             </div>
           </div>
           <div className="border-t border-gray-200 mt-4 pt-4 relative">
@@ -933,11 +936,11 @@ export default function Home() {
                   </div>
                   <div className="flex justify-between items-center mb-2">
                     <div className="text-red-500 text-lg font-bold">NSMQ</div>
-                    <div className="flex space-x-2 text-center text-gray-500 text-sm">
-                      <div className="w-12">1</div>
-                      <div className="w-16">2</div>
-                      <div className="w-16">3</div>
-                      <div className="w-18">1st Correct School</div>
+                    <div className="flex space-x-2 text-center -ml-4 mr-10 text-gray-500 text-sm">
+                      <div className="w-14">1</div>
+                      <div className="w-14">2</div>
+                      <div className="w-14">3</div>
+                      <div className="w-18 mr-4">1st Correct School</div>
                     </div>
                   </div>
                   <div className="space-y-1 mb-4">
@@ -971,10 +974,16 @@ export default function Home() {
                         15
                       </div>
                       <div className="flex space-x-2">
-                        <div className="w-12 text-center">Points</div>
-                        <div className="w-12 text-center">Over</div>
-                        <div className="w-12 text-center">Under</div>
-                        <div className="w-34 text-center">
+                        <div className="w-14 text-sm text-gray-600 text-center">
+                          Points
+                        </div>
+                        <div className="w-14 text-sm text-gray-600 text-center">
+                          Over
+                        </div>
+                        <div className="w-14 text-sm text-gray-600 text-center">
+                          Under
+                        </div>
+                        <div className="w-34 text-sm text-gray-600 text-center">
                           Extra Markets Available
                         </div>
                       </div>
@@ -1077,7 +1086,7 @@ export default function Home() {
                 </div>
                 <div className="flex justify-between items-center mb-2">
                   <div className="text-red-500 text-lg font-bold">NSMQ</div>
-                  <div className="flex space-x-2 text-center text-gray-500 text-sm">
+                  <div className="flex space-x-2 text-center text-gray-500 -ml-4 mr-10 text-sm">
                     <div className="w-12">1</div>
                     <div className="w-16">2</div>
                     <div className="w-16">3</div>
@@ -1187,10 +1196,16 @@ export default function Home() {
                     <div className="flex-1">Accra Academy</div>
                     <div className="text-blue-500 w-8 pl-1 text-center">15</div>
                     <div className="flex space-x-2">
-                      <div className="w-12 text-center">Points</div>
-                      <div className="w-12 text-center">Over</div>
-                      <div className="w-12 text-center">Under</div>
-                      <div className="w-34 text-center">
+                      <div className="w-14 text-sm text-gray-600 text-center">
+                        Points
+                      </div>
+                      <div className="w-14 text-sm text-gray-600 text-center">
+                        Over
+                      </div>
+                      <div className="w-14 text-sm text-gray-600 text-center">
+                        Under
+                      </div>
+                      <div className="w-34 text-sm text-gray-600 text-center">
                         Extra Markets Available
                       </div>
                     </div>
@@ -1257,7 +1272,7 @@ export default function Home() {
                 >
                   Betslip
                   {activeTab === "Betslip" && (
-                    <div className="absolute bottom-0 left-0 w-full h-1.5 bg-blue-600 rounded-full"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 rounded-full"></div>
                   )}
                 </div>
                 <div
@@ -1268,7 +1283,7 @@ export default function Home() {
                 >
                   My Bets
                   {activeTab === "My Bets" && (
-                    <div className="absolute bottom-0 left-0 w-full h-1.5 bg-blue-600 rounded-full"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1' bg-blue-600 rounded-full"></div>
                   )}
                 </div>
               </div>
