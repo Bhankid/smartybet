@@ -924,162 +924,6 @@ export default function Home() {
                 </select>
               </div>
             </div>
-            {/* <div className="flex justify-between items-center mb-4">
-            <input
-              type="text"
-              className="border rounded p-2 w-1/3"
-              placeholder="1 2 3"
-            />
-            <select className="border rounded p-2 w-1/3">
-              <option>1st Correct School</option>
-            </select>
-          </div>
-          <div className="bg-gray-50 rounded-lg p-4 mb-4">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-500">02/11 Saturday</span>
-              <span className="text-gray-500">
-                National Science and Maths Quiz
-              </span>
-              <span className="text-blue-500">+12 &gt;</span>
-            </div>
-            <div className="border-t pt-2">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-red-500">Round 1</span>
-                <span className="text-red-500">9&apos; 43&quot;</span>
-              </div>
-              <div className="text-red-500 font-bold mb-2">NSMQ</div>
-              <div className="mb-2">
-                <div className="flex justify-between items-center mb-1">
-                  <span>Accra High</span>
-                  <span className="text-blue-500">3</span>
-                </div>
-                <div className="flex justify-between items-center mb-1">
-                  <span>Accra Academy</span>
-                  <span className="text-blue-500">15</span>
-                </div>
-                <div className="flex justify-between items-center mb-1">
-                  <span>St. Thomas Aquinas</span>
-                  <span className="text-blue-500">0</span>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <div className="flex flex-col items-center space-y-1">
-                  <span>Points</span>
-                  <button className="border rounded p-2 w-20">20.00</button>
-                </div>
-                <div className="flex flex-col items-center space-y-1">
-                  <span>Over</span>
-                  <button className="border rounded p-2 w-20">20.00</button>
-                </div>
-                <div className="flex flex-col items-center space-y-1">
-                  <span>Under</span>
-                  <button className="border rounded p-2 w-20">15.00</button>
-                </div>
-                <div className="flex flex-col items-center space-y-1">
-                  <span>Extra Market Available</span>
-                  <button className="border rounded p-2 w-20">20.00</button>
-                  <button className="border rounded p-2 w-20">20.00</button>
-                  <button className="border rounded p-2 w-20">15.00</button>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <span>
-                  Round 1: <span className="text-blue-500">015</span>
-                  <span className="text-red-500">012</span>
-                  <span className="text-red-500">003</span>
-                </span>
-                <span>
-                  Round 2: <span className="text-gray-500">000</span>
-                  <span className="text-gray-500">000</span>
-                  <span className="text-gray-500">000</span>
-                </span>
-                <span>
-                  Round 3: <span className="text-gray-500">000</span>
-                  <span className="text-gray-500">000</span>
-                  <span className="text-gray-500">000</span>
-                </span>
-                <span className="text-red-500">
-                  <i className="fas fa-fire"></i>
-                </span>
-                <span className="text-red-500">
-                  <i className="fas fa-chart-line"></i>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div className="bg-gray-50 rounded-lg p-4">
-            <div className="flex justify-between items-center mb-2">
-              <span className="text-gray-500">02/11 Saturday</span>
-              <span className="text-gray-500">
-                National Science and Maths Quiz
-              </span>
-              <span className="text-blue-500">+12 &gt;</span>
-            </div>
-            <div className="border-t pt-2">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-red-500">Round 1</span>
-                <span className="text-red-500">9&apos; 43&quot;</span>
-              </div>
-              <div className="text-red-500 font-bold mb-2">NSMQ</div>
-              <div className="mb-2">
-                <div className="flex justify-between items-center mb-1">
-                  <span>Accra High</span>
-                  <span className="text-blue-500">3</span>
-                </div>
-                <div className="flex justify-between items-center mb-1">
-                  <span>Accra Academy</span>
-                  <span className="text-blue-500">15</span>
-                </div>
-                <div className="flex justify-between items-center mb-1">
-                  <span>St. Thomas Aquinas</span>
-                  <span className="text-blue-500">0</span>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <div className="flex flex-col items-center space-y-1">
-                  <span>Points</span>
-                  <button className="border rounded p-2 w-20">20.00</button>
-                </div>
-                <div className="flex flex-col items-center space-y-1">
-                  <span>Over</span>
-                  <button className="border rounded p-2 w-20">20.00</button>
-                </div>
-                <div className="flex flex-col items-center space-y-1">
-                  <span>Under</span>
-                  <button className="border rounded p-2 w-20">15.00</button>
-                </div>
-                <div className="flex flex-col items-center space-y-1">
-                  <span>Extra Market Available</span>
-                  <button className="border rounded p-2 w-20">20.00</button>
-                  <button className="border rounded p-2 w-20">20.00</button>
-                  <button className="border rounded p-2 w-20">15.00</button>
-                </div>
-              </div>
-              <div className="flex justify-between items-center mb-2">
-                <span>
-                  Round 1: <span className="text-blue-500">015</span>
-                  <span className="text-red-500">012</span>
-                  <span className="text-red-500">003</span>
-                </span>
-                <span>
-                  Round 2: <span className="text-gray-500">000</span>
-                  <span className="text-gray-500">000</span>
-                  <span className="text-gray-500">000</span>
-                </span>
-                <span>
-                  Round 3: <span className="text-gray-500">000</span>
-                  <span className="text-gray-500">000</span>
-                  <span className="text-gray-500">000</span>
-                </span>
-                <span className="text-red-500">
-                  <i className="fas fa-fire"></i>
-                </span>
-                <span className="text-red-500">
-                  <i className="fas fa-chart-line"></i>
-                </span>
-              </div>
-            </div>
-          </div> */}
 
             <div className="flex justify-between items-center mb-2">
               <div className="text-gray-500 text-sm">02/11 Saturday</div>
@@ -1178,20 +1022,22 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="text-gray-500 text-sm mb-2">
-                    Round 1: <span className="text-blue-500">015</span>{" "}
-                    <span className="text-gray-500">012</span>{" "}
-                    <span className="text-red-500">003</span> | Round 2:{" "}
-                    <span className="text-gray-500">000</span>{" "}
-                    <span className="text-gray-500">000</span>{" "}
-                    <span className="text-gray-500">000</span> | Round 3:{" "}
-                    <span className="text-gray-500">000</span>{" "}
-                    <span className="text-gray-500">000</span>{" "}
-                    <span className="text-gray-500">000</span>
-                  </div>
-                  <div className="flex justify-end items-center">
-                    <i className="fas fa-fire text-red-500 mr-2"></i>
-                    <i className="fas fa-chart-line text-red-500"></i>
+                  <div className="flex items-center justify-between">
+                    <div className="text-gray-500 text-sm mb-2">
+                      Round 1: <span className="text-blue-500">015</span>{" "}
+                      <span className="text-gray-500">012</span>{" "}
+                      <span className="text-red-500">003</span> | Round 2:{" "}
+                      <span className="text-gray-500">000</span>{" "}
+                      <span className="text-gray-500">000</span>{" "}
+                      <span className="text-gray-500">000</span> | Round 3:{" "}
+                      <span className="text-gray-500">000</span>{" "}
+                      <span className="text-gray-500">000</span>{" "}
+                      <span className="text-gray-500">000</span>
+                    </div>
+                    <div className="flex justify-end items-center">
+                      <i className="fas fa-fire text-red-500 mr-2"></i>
+                      <i className="fas fa-chart-line text-red-500"></i>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -1402,20 +1248,22 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="text-gray-500 text-sm mb-2">
-                  Round 1: <span className="text-blue-500">015</span>{" "}
-                  <span className="text-gray-500">012</span>{" "}
-                  <span className="text-red-500">003</span> | Round 2:{" "}
-                  <span className="text-gray-500">000</span>{" "}
-                  <span className="text-gray-500">000</span>{" "}
-                  <span className="text-gray-500">000</span> | Round 3:{" "}
-                  <span className="text-gray-500">000</span>{" "}
-                  <span className="text-gray-500">000</span>{" "}
-                  <span className="text-gray-500">000</span>
-                </div>
-                <div className="flex justify-end items-center">
-                  <i className="fas fa-fire text-red-500 mr-2"></i>
-                  <i className="fas fa-chart-line text-red-500"></i>
+                <div className="flex items-center justify-between">
+                  <div className="text-gray-500 text-sm mb-2">
+                    Round 1: <span className="text-blue-500">015</span>{" "}
+                    <span className="text-gray-500">012</span>{" "}
+                    <span className="text-red-500">003</span> | Round 2:{" "}
+                    <span className="text-gray-500">000</span>{" "}
+                    <span className="text-gray-500">000</span>{" "}
+                    <span className="text-gray-500">000</span> | Round 3:{" "}
+                    <span className="text-gray-500">000</span>{" "}
+                    <span className="text-gray-500">000</span>{" "}
+                    <span className="text-gray-500">000</span>
+                  </div>
+                  <div className="flex justify-end items-center">
+                    <i className="fas fa-fire text-red-500 mr-2"></i>
+                    <i className="fas fa-chart-line text-red-500"></i>
+                  </div>
                 </div>
               </div>
             </div>
