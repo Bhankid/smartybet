@@ -915,12 +915,12 @@ export default function Home() {
               <hr className="mb-4" />
               <div className="flex justify-end items-center space-x-4">
                 <button
-                  className="border border-gray-300 rounded px-1 py-1 w-36 mr-4 bg-white text-gray-700 cursor-pointer"
+                  className="border border-gray-300 rounded px-2 py-1 w-36 mr-4 bg-white text-gray-700 cursor-pointer"
                   disabled
                 >
-                  <span className="mr-2 pr-6">1</span>
-                  <span className="mr-2 pr-6">2</span>
-                  <span className="mr-2 pr-6">3</span>
+                  <span className="mr-2 pr-8">1</span>
+                  <span className="mr-4 pr-8">2</span>
+                  <span className="mr-4 pr-8">3</span>
                 </button>
                 <select className="border rounded px-1 py-1">
                   <option>1st Correct School</option>
@@ -948,12 +948,12 @@ export default function Home() {
                     <div className="text-red-500 text-lg font-bold">NSMQ</div>
                     <div className="flex space-x-2 text-center -ml-4 mr-10 text-gray-500 text-sm">
                       <button
-                        className="border-none rounded px-1 py-1 w-40 mr-4 bg-white text-gray-700 cursor-pointer"
+                        className="border-none rounded px-1 py-1 w-40 mr-0.5 bg-white text-gray-700 cursor-pointer"
                         disabled
                       >
-                        <span className="mr-2 pr-6">1</span>
-                        <span className="mr-2 pr-6">2</span>
-                        <span className="mr-2 pr-6">3</span>
+                        <span className="mr-2 pr-10 ">1</span>
+                        <span className="mr-2 pr-10 ">2</span>
+                        <span className="mr-2 pr-10 ">3</span>
                       </button>
                       <div className="w-18 mr-4">1st Correct School</div>
                     </div>
@@ -961,7 +961,9 @@ export default function Home() {
                   <div className="space-y-1 mb-4">
                     <div className="flex justify-between items-center">
                       <div className="flex-1">Accra High</div>
-                      <div className="text-blue-500 w-8 text-center">3</div>
+                      <div className="text-blue-500 w-8 pr-12 text-center">
+                        3
+                      </div>
                       <div className="flex space-x-2">
                         <button className="w-12  flex items-center justify-center border rounded">
                           <i className="fas fa-lock text-gray-500"></i>
@@ -985,7 +987,7 @@ export default function Home() {
                     </div>
                     <div className="flex justify-between items-center">
                       <div className="flex-1">Accra Academy</div>
-                      <div className="text-blue-500 w-8 pl-1 text-center">
+                      <div className="text-blue-500 w-8 pr-12 text-center">
                         15
                       </div>
                       <div className="flex space-x-2">
@@ -1005,7 +1007,9 @@ export default function Home() {
                     </div>
                     <div className="flex justify-between items-center">
                       <div className="flex-1">St. Thomas Aquinas</div>
-                      <div className="text-blue-500 w-8 text-center">0</div>
+                      <div className="text-blue-500 w-8 pr-12 text-center">
+                        0
+                      </div>
                       <div className="flex space-x-2">
                         <select className="w-12 text-sm text-center border rounded p-1">
                           <option value="20.00">20.00</option>
@@ -1117,7 +1121,7 @@ export default function Home() {
                 <div className="space-y-1 mb-4">
                   <div className="flex justify-between items-center">
                     <div className="flex-1">Accra High</div>
-                    <div className="text-blue-500 w-8 text-center">3</div>
+                    <div className="text-blue-500 w-8 pr-12 text-center">3</div>
                     <div className="flex space-x-2">
                       <button className="w-12  flex items-center justify-center border rounded">
                         <i className="fas fa-lock text-gray-500"></i>
@@ -1141,7 +1145,9 @@ export default function Home() {
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="flex-1">Accra Academy</div>
-                    <div className="text-blue-500 w-8 pl-1 text-center">15</div>
+                    <div className="text-blue-500 w-8 pr-12 text-center">
+                      15
+                    </div>
                     <div className="flex space-x-2">
                       <div className="w-14 text-sm text-gray-600 text-center">
                         Points
@@ -1159,7 +1165,7 @@ export default function Home() {
                   </div>
                   <div className="flex justify-between items-center">
                     <div className="flex-1">St. Thomas Aquinas</div>
-                    <div className="text-blue-500 w-8 text-center">0</div>
+                    <div className="text-blue-500 w-8 pr-12 text-center">0</div>
                     <div className="flex space-x-2">
                       <select className="w-12 text-sm text-center border rounded p-1">
                         <option value="20.00">20.00</option>
