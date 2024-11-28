@@ -4,7 +4,6 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Matches } from "./components/Matches";
-import Skeleton from "./components/Skeleton"; 
 import Footer from "./components/Footer";
 import Loading from "./components/Loading";
 
@@ -14,16 +13,32 @@ export default function Home() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [visibleIndex, setVisibleIndex] = useState(null);
   
    useEffect(() => {
-     // Simulate a loading delay
      const timer = setTimeout(() => {
        setLoading(false);
-     }, 2000); // Adjust the time as needed
+     }, 2000); 
 
      return () => clearTimeout(timer);
    }, []);
 
+   const logos = [
+     {
+       src: "https://i.postimg.cc/rmGL9LCQ/nsmq.jpg",
+       alt: "Accra Academy logo",
+     },
+     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+   ];
+
+   const handleLogoClick = (index) => {
+     setVisibleIndex(visibleIndex === index ? null : index);
+   };
+  
   const imageUrls = [
     "https://i.postimg.cc/bJ24mP2j/qz.png",
     "https://i.postimg.cc/DwrkTnCf/Frame-94.png",
@@ -64,9 +79,9 @@ export default function Home() {
       setIsTransitioning(true);
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-        setIsTransitioning(false); // Reset transitioning state
-      }, 500); // Duration of the transition
-    }, 3000); // Change image every 3 seconds
+        setIsTransitioning(false); 
+      }, 500); 
+    }, 3000); 
 
     return () => clearInterval(interval);
   }, [imageUrls.length]);
@@ -176,21 +191,86 @@ export default function Home() {
           <div className="block md:hidden p-2">
             <div className="bg-blue-200 h-24 rounded mb-2 overflow-hidden">
               <div className="marquee">
-                <img
-                  src="https://i.postimg.cc/bJ24mP2j/qz.png"
-                  alt="Slider Image 1"
-                  className="h-full w-full"
-                />
-                <img
-                  src="https://i.postimg.cc/DwrkTnCf/Frame-94.png"
-                  alt="Slider Image 2"
-                  className="h-full w-full"
-                />
-                <img
-                  src="https://i.postimg.cc/C169N1K7/Amanfuor.png"
-                  alt="Slider Image 3"
-                  className="h-full w-full"
-                />
+                <div className="marquee-content">
+                  <Image
+                    src="https://i.postimg.cc/bJ24mP2j/qz.png"
+                    alt="Slider Image 1"
+                    className="h-full w-full"
+                    width={500}
+                    height={500}
+                    crossOrigin="anonymous"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
+                  />
+                  <Image
+                    src="https://i.postimg.cc/DwrkTnCf/Frame-94.png"
+                    alt="Slider Image 2"
+                    className="h-full w-full"
+                    width={500}
+                    height={500}
+                    crossOrigin="anonymous"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
+                  />
+                  <Image
+                    src="https://i.postimg.cc/C169N1K7/Amanfuor.png"
+                    alt="Slider Image 3"
+                    className="h-full w-full"
+                    width={500}
+                    height={500}
+                    crossOrigin="anonymous"
+                    style={{
+                      objectFit: "cover",
+                      objectPosition: "center",
+                    }}
+                  />
+                  <Image
+                    src="https://i.postimg.cc/bJ24mP2j/qz.png"
+                    alt="Slider Image 1"
+                    className="h-full w-full"
+                    width={500}
+                    height={500}
+                  />
+                  <Image
+                    src="https://i.postimg.cc/DwrkTnCf/Frame-94.png"
+                    alt="Slider Image 2"
+                    className="h-full w-full"
+                    width={500}
+                    height={500}
+                  />
+                  <Image
+                    src="https://i.postimg.cc/C169N1K7/Amanfuor.png"
+                    alt="Slider Image 3"
+                    className="h-full w-full"
+                    width={500}
+                    height={500}
+                  />
+                  <Image
+                    src="https://i.postimg.cc/bJ24mP2j/qz.png"
+                    alt="Slider Image 1"
+                    className="h-full w-full"
+                    width={500}
+                    height={500}
+                  />
+                  <Image
+                    src="https://i.postimg.cc/DwrkTnCf/Frame-94.png"
+                    alt="Slider Image 2"
+                    className="h-full w-full"
+                    width={500}
+                    height={500}
+                  />
+                  <Image
+                    src="https://i.postimg.cc/C169N1K7/Amanfuor.png"
+                    alt="Slider Image 3"
+                    className="h-full w-full"
+                    width={500}
+                    height={500}
+                  />
+                </div>
               </div>
             </div>
             <div className="bg-white rounded-lg shadow p-4 mb-2 flex justify-around">
@@ -255,50 +335,25 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-white rounded-lg shadow p-2">
-              <div className="flex items-center mb-2 bg-blue-100 rounded-lg p-0.5">
-                <Image
-                  src="https://i.postimg.cc/152FXy6V/ac.png"
-                  alt="Accra Academy logo"
-                  className="mb-1 mr-2"
-                  width={20}
-                  height={20}
-                />
-                <span className="text-xs font-bold mr-2">NSMQ</span>
-                <Image
-                  src="https://i.postimg.cc/152FXy6V/ac.png"
-                  alt="Accra Academy logo"
-                  className="mb-1 mr-2"
-                  width={20}
-                  height={20}
-                />
-                <Image
-                  src="https://i.postimg.cc/152FXy6V/ac.png"
-                  alt="Accra Academy logo"
-                  className="mb-1 mr-2"
-                  width={20}
-                  height={20}
-                />
-                <Image
-                  src="https://i.postimg.cc/152FXy6V/ac.png"
-                  alt="Accra Academy logo"
-                  className="mb-1 mr-2"
-                  width={20}
-                  height={20}
-                />
-                <Image
-                  src="https://i.postimg.cc/152FXy6V/ac.png"
-                  alt="Accra Academy logo"
-                  className="mb-1 mr-2"
-                  width={20}
-                  height={20}
-                />
-                <Image
-                  src="https://i.postimg.cc/152FXy6V/ac.png"
-                  alt="Accra Academy logo"
-                  className="mb-1 mr-2"
-                  width={20}
-                  height={20}
-                />
+              <div className="flex">
+                {logos.map((logo, index) => (
+                  <div
+                    key={index}
+                    className="bg-blue-100 p-2 rounded flex items-center mr-2"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="mb-1 mr-2 rounded-full cursor-pointer"
+                      width={20}
+                      height={20}
+                      onClick={() => handleLogoClick(index)} 
+                    />
+                    {visibleIndex === index && ( 
+                      <span className="text-xs font-bold">NSMQ</span>
+                    )}
+                  </div>
+                ))}
               </div>
               <div className="relative overflow-hidden">
                 <div
@@ -707,7 +762,6 @@ export default function Home() {
           <div className="min-h-screen hidden md:flex bg-[#E7EDF6]">
             {/* Left Sidebar */}
             <div className="w-1/5 p-2">
-          
               <div className="bg-white p-4 rounded-lg shadow-md mb-4">
                 <h2 className="text-lg font-bold">
                   Pop<span className="text-blue-600">ular</span>
@@ -739,16 +793,6 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-
-              {/* <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-          <h2 className="text-xl font-bold text-gray-900 mb-2">Quiz</h2>
-          <ul>
-            <li className="mb-2 text-gray-800 font-semibold">NSMQ 299</li>
-            <li className="mb-2 text-gray-800 font-semibold">JSMQ 299</li>
-            <li className="mb-2 text-gray-800 font-semibold">Sharks 299</li>
-            <li className="mb-2 text-gray-800 font-semibold">NIOC 299</li>
-          </ul>
-        </div> */}
 
               <div className="bg-white rounded-lg shadow-lg p-4 mb-4">
                 <h1 className="text-lg font-bold mb-4">
@@ -1315,7 +1359,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-            <Footer />
+          <Footer />
         </>
       )}
     </>

@@ -34,32 +34,36 @@
 }
 
 
- .marquee {
-   display: flex;
-   overflow: hidden;
-   white-space: nowrap;
-   animation: marquee 10s linear infinite;
- }
+.marquee {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
 
- @keyframes marquee {
-   0% {
-     transform: translateX(100%);
-   }
+.marquee-content {
+  display: flex;
+  animation: marquee 15s linear infinite;
+}
 
-   100% {
-     transform: translateX(-100%);
-   }
- }
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-2000px);
+  }
+}
 
 
 .scrollable-buttons {
-  overflow-x: auto; /* Enable horizontal scrolling */
-  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  overflow-x: auto; 
+  -ms-overflow-style: none; 
   scrollbar-width: none;
 }
 
 .scrollable-buttons::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+  display: none; 
 }
 
 
