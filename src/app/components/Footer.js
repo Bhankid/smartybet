@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
+
 function Footer() {
   const currentYear = new Date().getFullYear();
   return (

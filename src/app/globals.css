@@ -61,3 +61,28 @@
 .scrollable-buttons::-webkit-scrollbar {
   display: none; /* Hide scrollbar for Chrome, Safari and Opera */
 }
+
+
+@keyframes skeleton-animation {
+  0% {
+    background-color: #e0e0e0;
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    background-color: #f5f5f5;
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+  100% {
+    background-color: #e0e0e0;
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.skeleton {
+  animation: skeleton-animation 1.5s linear infinite;
+  animation-fill-mode: forwards;
+   border-radius: 4px;
+}
