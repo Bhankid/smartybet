@@ -339,17 +339,17 @@ export default function Home() {
                 {logos.map((logo, index) => (
                   <div
                     key={index}
-                    className="bg-blue-100 p-2 rounded flex items-center mr-2"
+                    className="bg-blue-100 p-0.5 h-6 rounded flex items-center mr-2 mb-2"
                   >
                     <Image
                       src={logo.src}
                       alt={logo.alt}
                       className="mb-1 mr-2 rounded-full cursor-pointer"
-                      width={20}
-                      height={20}
-                      onClick={() => handleLogoClick(index)} 
+                      width={15}
+                      height={15}
+                      onClick={() => handleLogoClick(index)}
                     />
-                    {visibleIndex === index && ( 
+                    {visibleIndex === index && (
                       <span className="text-xs font-bold">NSMQ</span>
                     )}
                   </div>
@@ -423,23 +423,21 @@ export default function Home() {
             {/* Two */}
             <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-2 mt-10">
               <div className="flex justify-between items-center mb-4">
-                <div className="flex items-center">
-                  <div className="text-lg font-bold">LIVE</div>
-                  <div className="h-6 border-l-2 border-blue-500 mx-4"></div>
-                  <div className="text-blue-500 text-sm cursor-pointer">
+                <h1 className="text-lg font-semibold">Live</h1>
+                <div className="border-l-2 border-blue-500 h-6 mx-2"></div>
+                <div className="flex space-x-2 text-sm">
+                  <a href="#" className="text-blue-500">
                     All
-                  </div>
-                </div>
-                <div className="flex space-x-4">
-                  <div className="text-gray-500 text-sm cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-500">
                     NSMQ
-                  </div>
-                  <div className="text-gray-500 text-sm cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-500">
                     JSMQ
-                  </div>
-                  <div className="text-gray-500 text-sm cursor-pointer">
+                  </a>
+                  <a href="#" className="text-gray-500">
                     Sharks
-                  </div>
+                  </a>
                 </div>
               </div>
               <div className="flex justify-center mb-2 overflow-hidden">
