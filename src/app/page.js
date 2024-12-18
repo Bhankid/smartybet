@@ -14,31 +14,70 @@ export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [loading, setLoading] = useState(true);
   const [visibleIndex, setVisibleIndex] = useState(null);
-  
-   useEffect(() => {
-     const timer = setTimeout(() => {
-       setLoading(false);
-     }, 2000); 
+  const [deferredPrompt, setDeferredPrompt] = useState(null);
 
-     return () => clearTimeout(timer);
-   }, []);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000);
 
-   const logos = [
-     {
-       src: "https://i.postimg.cc/rmGL9LCQ/nsmq.jpg",
-       alt: "Accra Academy logo",
-     },
-     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
-     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
-     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
-     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
-     { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
-   ];
+    return () => clearTimeout(timer);
+  }, []);
 
-   const handleLogoClick = (index) => {
-     setVisibleIndex(visibleIndex === index ? null : index);
-   };
-  
+  // Handle the beforeinstallprompt event
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (event) => {
+      event.preventDefault(); // Prevent the mini-info bar from appearing on mobile
+      setDeferredPrompt(event); // Stash the event so it can be triggered later
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt
+      );
+    };
+  }, []);
+
+  const showInstallPrompt = useCallback(() => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt(); // Show the install prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === "accepted") {
+          console.log("User  accepted the A2HS prompt");
+        } else {
+          console.log("User  dismissed the A2HS prompt");
+        }
+        setDeferredPrompt(null); // Clear the prompt
+      });
+    }
+  }, [deferredPrompt]); 
+
+  // Call showInstallPrompt when the component mounts
+  useEffect(() => {
+    if (deferredPrompt) {
+      showInstallPrompt();
+    }
+  }, [deferredPrompt, showInstallPrompt]);
+
+  const logos = [
+    {
+      src: "https://i.postimg.cc/rmGL9LCQ/nsmq.jpg",
+      alt: "Accra Academy logo",
+    },
+    { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+    { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+    { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+    { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+    { src: "https://i.postimg.cc/152FXy6V/ac.png", alt: "Accra Academy logo" },
+  ];
+
+  const handleLogoClick = (index) => {
+    setVisibleIndex(visibleIndex === index ? null : index);
+  };
+
   const imageUrls = [
     "https://i.postimg.cc/bJ24mP2j/qz.png",
     "https://i.postimg.cc/DwrkTnCf/Frame-94.png",
@@ -79,9 +118,9 @@ export default function Home() {
       setIsTransitioning(true);
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-        setIsTransitioning(false); 
-      }, 500); 
-    }, 3000); 
+        setIsTransitioning(false);
+      }, 500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [imageUrls.length]);
@@ -188,6 +227,15 @@ export default function Home() {
         <Loading />
       ) : (
         <>
+          <div className="install-prompt">
+            <button
+              onClick={showInstallPrompt}
+              className="bg-blue-500 text-white p-2 rounded"
+            >
+              Install Web App
+            </button>
+          </div>
+
           <div className="block md:hidden p-2">
             <div className="bg-blue-200 h-24 rounded mb-2 overflow-hidden">
               <div className="marquee">
