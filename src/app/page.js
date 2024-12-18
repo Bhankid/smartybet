@@ -15,6 +15,7 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
   const [visibleIndex, setVisibleIndex] = useState(null);
   const [deferredPrompt, setDeferredPrompt] = useState(null);
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -22,6 +23,20 @@ export default function Home() {
     }, 2000);
 
     return () => clearTimeout(timer);
+  }, []);
+
+  // Check if the device is mobile or tablet
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileOrTablet(window.matchMedia("(max-width: 768px)").matches); 
+    };
+
+    handleResize(); // Check on initial load
+    window.addEventListener("resize", handleResize); // Check on resize
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Cleanup listener
+    };
   }, []);
 
   // Handle the beforeinstallprompt event
@@ -53,7 +68,7 @@ export default function Home() {
         setDeferredPrompt(null); // Clear the prompt
       });
     }
-  }, [deferredPrompt]); 
+  }, [deferredPrompt]);
 
   // Call showInstallPrompt when the component mounts
   useEffect(() => {
@@ -227,14 +242,16 @@ export default function Home() {
         <Loading />
       ) : (
         <>
-          <div className="install-prompt">
-            <button
-              onClick={showInstallPrompt}
-              className="bg-blue-500 text-white p-2 rounded"
-            >
-              Install Web App
-            </button>
-          </div>
+          {isMobileOrTablet && ( 
+            <div className="install-prompt">
+              <button
+                onClick={showInstallPrompt}
+                className="bg-blue-500 text-white p-2 rounded"
+              >
+                Install Web App
+              </button>
+            </div>
+          )}
 
           <div className="block md:hidden p-2">
             <div className="bg-blue-200 h-24 rounded mb-2 overflow-hidden">
